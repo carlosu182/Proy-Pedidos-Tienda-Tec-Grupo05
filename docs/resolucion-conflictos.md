@@ -42,3 +42,28 @@ Este conflicto demuestra una resolución real de Git sobre un archivo de evidenc
 ## Alcance y limitaciones
 
 El caso documenta el procedimiento técnico de conflicto, las ramas involucradas y la decisión adoptada. La participación de otro integrante debe confirmarse con evidencia real; no se atribuyen revisiones ni contribuciones que no estén verificadas.
+## Verificación del historial Git
+
+Se verificó la existencia de los commits relacionados con el ejercicio de conflicto realizado en el repositorio original.
+
+El conflicto se produjo al integrar dos variantes incompatibles del archivo `docs/prueba-conflicto-git.txt`.
+
+**Evidencias verificadas:**
+
+- Preparación: `82f49bd`.
+- Primera variante: `685d535`.
+- Segunda variante: `2e25c5f`.
+- Resolución: `75f39c3`.
+- Documentación: `283520c`.
+
+El commit de resolución fue realizado por Bruno Reyes el 20 de octubre de 2026 y registra la integración de los cambios mediante un commit de fusión.
+
+Repositorio de origen:
+https://github.com/Eduardo-Jara03/Proyecto-pedidos-tiendatecnologia-grupo05
+
+Rama de evidencia:
+`evidencia/conflicto-b`
+
+La resolución corresponde a un ejercicio controlado sobre un archivo de documentación y no a un conflicto del código funcional.
+
+La participación individual en las dos modificaciones debe acreditarse mediante la autoría de los commits correspondientes.
