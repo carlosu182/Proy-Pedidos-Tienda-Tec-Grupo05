@@ -3,8 +3,8 @@ const path = require("node:path");
 const db = require("./database/connection");
 
 const clientesRoutes = require("./routes/clientes");
-const productosRoutes = require("./routes/productos");
-const pedidosRoutes = require("./routes/pedidos");
+const serviciosRoutes = require("./routes/servicios");
+const reservasRoutes = require("./routes/reservas");
 
 const app = express();
 const PORT = Number(process.env.PORT) || 3000;
@@ -13,8 +13,8 @@ app.disable("x-powered-by");
 app.use(express.json({ limit: "100kb" }));
 
 app.use("/api/clientes", clientesRoutes);
-app.use("/api/productos", productosRoutes);
-app.use("/api/pedidos", pedidosRoutes);
+app.use("/api/servicios", serviciosRoutes);
+app.use("/api/reservas", reservasRoutes);
 
 app.get("/api/health", (req, res) => {
     try {

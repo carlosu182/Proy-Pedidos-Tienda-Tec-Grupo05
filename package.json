@@ -1,7 +1,7 @@
 {
-  "name": "proyecto-pedidos-tiendatecnologia-grupo05",
+  "name": "agenda-clara-gestion-reservas",
   "version": "1.0.0",
-  "description": "- Jara Moya, Eduardo Jesús — U21302190\r - Galvan Zamudio, Lisbert Wiliams — U22217814\r - Velasquez Pacheco, Nery Emerson — U23272063\r - Rivera Hipolito, Carlos Fernando — U23216154\r - Reyes Vicente, Bruno Santiago — U19221035",
+  "description": "Sistema web para gestionar clientes, servicios y reservas; proyecto colaborativo de la V1.",
   "main": "index.js",
   "directories": {
     "doc": "docs"

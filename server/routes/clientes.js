@@ -1,4 +1,4 @@
-﻿const express = require("express");
+const express = require("express");
 const db = require("../database/connection");
 
 const router = express.Router();
@@ -132,7 +132,7 @@ router.delete("/:id", (req, res) => {
     } catch (error) {
         if (error.code === "SQLITE_CONSTRAINT_FOREIGNKEY") {
             return res.status(409).json({
-                error: "No se puede eliminar el cliente porque tiene pedidos asociados"
+                error: "No se puede eliminar el cliente porque tiene reservas asociadas"
             });
         }
         console.error(error);

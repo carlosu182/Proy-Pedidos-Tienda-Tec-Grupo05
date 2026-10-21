@@ -1,10 +1,10 @@
-﻿const fs = require("node:fs");
+const fs = require("node:fs");
 const path = require("node:path");
 const Database = require("better-sqlite3");
 
 const databasePath = process.env.DB_PATH
     ? path.resolve(process.env.DB_PATH)
-    : path.join(__dirname, "data", "tiendatecnologia.db");
+    : path.join(__dirname, "data", "agenda-clara.db");
 
 fs.mkdirSync(path.dirname(databasePath), { recursive: true });
 
