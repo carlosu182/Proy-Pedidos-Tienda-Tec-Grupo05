@@ -12,6 +12,17 @@ const PORT = Number(process.env.PORT) || 3000;
 app.disable("x-powered-by");
 app.use(express.json({ limit: "100kb" }));
 
+// Manejo de errores cuando el cliente envía JSON inválido
+app.use((error, req, res, next) => {
+    if (error instanceof SyntaxError && error.status === 400 && "body" in error) {
+        return res.status(400).json({
+            error: "El formato JSON enviado no es válido"
+        });
+    }
+
+    next(error);
+});
+
 app.use("/api/clientes", clientesRoutes);
 app.use("/api/servicios", serviciosRoutes);
 app.use("/api/reservas", reservasRoutes);
