@@ -1,103 +1,44 @@
-# API REST — Sistema de Gestión de Pedidos
+# API REST — Agenda Clara V1
 
-Base URL local: `http://localhost:3000`.
-
-Todas las respuestas de recursos usan JSON, excepto las operaciones exitosas de eliminación, que devuelven `204 No Content`. Los IDs deben ser enteros positivos.
+Base URL local: `http://localhost:3000/api`
 
 ## Salud
 
-### `GET /api/health`
-
-Devuelve `200` cuando Express puede consultar SQLite. Si la base de datos no responde, devuelve `503`.
+- `GET /health`: comprueba la API y la conexión con SQLite.
 
 ## Clientes
 
-### `GET /api/clientes?q=texto`
+- `GET /clientes?q=texto`: lista clientes o filtra por nombre, documento o correo.
+- `GET /clientes/:id`: consulta un cliente.
+- `POST /clientes`: registra `{ "nombre", "documento", "correo" }`.
+- `PUT /clientes/:id`: modifica los mismos campos.
 
-Lista clientes ordenados por ID descendente. `q` es opcional y busca por nombre, documento o correo.
+## Servicios
 
-### `POST /api/clientes`
+- `GET /servicios?q=texto`: consulta/busca servicios.
+- `GET /servicios/:id`: consulta un servicio.
+- `POST /servicios`: registra `{ "nombre", "descripcion", "precio", "duracion_minutos" }`.
+- `PUT /servicios/:id`: actualiza nombre, descripción, precio y duración.
+- `PATCH /servicios/:id/estado`: recibe `{ "activo": true }` o `false`.
 
-Cuerpo:
+## Reservas
 
-```json
-{
-  "nombre": "Cliente de prueba",
-  "documento": "DOC-001",
-  "correo": "cliente@example.com"
-}
-```
+- `GET /reservas?q=texto&estado=RESERVADA`: consulta/busca y filtra reservas.
+- `GET /reservas/:id`: consulta una reserva.
+- `POST /reservas`: recibe `cliente_id`, `servicio_id`, `fecha_hora` (`YYYY-MM-DDTHH:mm`) y `observaciones` opcional.
+- `PATCH /reservas/:id/cancelar`: cambia el estado a `CANCELADA`; no elimina el registro.
 
-Devuelve `201`; devuelve `400` por campos o correo inválidos y `409` si el documento ya existe.
+Las reservas relacionan claves foráneas de cliente y servicio. No se permite crear una reserva para un servicio inactivo o un cliente inexistente. La API devuelve códigos HTTP 4xx para datos inválidos y conflictos de negocio.
 
-### `GET /api/clientes/:id`, `PUT /api/clientes/:id`, `DELETE /api/clientes/:id`
-
-Consulta, actualiza o elimina un cliente. La eliminación devuelve `409` si tiene pedidos asociados.
-
-## Productos
-
-### `GET /api/productos?q=texto&todos=true`
-
-Lista productos activos por defecto. `q` busca por código o nombre. `todos=true` incluye productos desactivados.
-
-### `POST /api/productos`
-
-Cuerpo:
-
-```json
-{
-  "codigo": "TEC-001",
-  "nombre": "Teclado",
-  "precio": 149.9
-}
-```
-
-Devuelve `201`; devuelve `400` para datos incompletos o precio no positivo y `409` si el código existe.
-
-### `GET /api/productos/:id`, `PUT /api/productos/:id`, `DELETE /api/productos/:id`
-
-Consulta, actualiza o desactiva lógicamente un producto. El endpoint DELETE no borra el registro físico.
-
-## Pedidos
-
-### `GET /api/pedidos?q=texto`
-
-Lista pedidos por fecha/ID descendente. `q` es opcional y busca por código, cliente, nombre de producto o código de producto.
-
-### `POST /api/pedidos`
-
-Cuerpo:
+## Ejemplo de alta de reserva
 
 ```json
 {
   "cliente_id": 1,
-  "detalles": [
-    { "producto_id": 1, "cantidad": 2 },
-    { "producto_id": 2, "cantidad": 1 }
-  ]
+  "servicio_id": 1,
+  "fecha_hora": "2027-03-15T10:30",
+  "observaciones": "Primera visita"
 }
 ```
 
-El backend verifica cliente, productos activos y cantidades; agrupa líneas repetidas del mismo producto, calcula subtotales y total con precios consultados en SQLite y registra el pedido y sus detalles dentro de una transacción. El precio no se acepta desde el cliente como fuente de verdad.
-
-Respuestas principales: `201` creado; `400` si el cliente, producto o detalle es inválido; `500` si falla el registro.
-
-### `GET /api/pedidos/:id`
-
-Devuelve el pedido con `detalles`, incluido código y nombre de cada producto, cantidad, precio unitario y subtotal. Devuelve `400` por ID inválido y `404` si no existe.
-
-### `PUT /api/pedidos/:id`
-
-Actualiza cliente y detalles del pedido. Acepta el mismo esquema de cuerpo que POST. El pedido debe existir y no estar cancelado. Los cambios de cabecera y detalles se guardan en una transacción.
-
-### `PATCH /api/pedidos/:id/cancelar`
-
-Cambia el estado a `CANCELADO`. Devuelve `409` si ya estaba cancelado.
-
-### `DELETE /api/pedidos/:id`
-
-Elimina el pedido y sus detalles asociados mediante la clave foránea `ON DELETE CASCADE`. Devuelve `204` si lo elimina y `404` si no existe.
-
-## Persistencia y pruebas
-
-El esquema se define en `server/database/schema.sql`. La conexión habilita claves foráneas y crea las tablas e índices al iniciar. `npm test` ejecuta la suite automatizada con una base temporal.
+Ejecutar `npm test` para correr las pruebas automatizadas de la API.

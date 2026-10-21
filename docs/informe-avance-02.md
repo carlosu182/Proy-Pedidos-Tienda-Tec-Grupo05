@@ -1,143 +1,75 @@
-# Informe de Avance 02 — Sistema de Gestión de Pedidos
+# Informe de avance — Agenda Clara
+
+## Carátula
 
 **Asignatura:** Herramientas de Desarrollo
-**Carrera:** Ingeniería de Sistemas e Informática
+
+**Proyecto:** Sistema de gestión de clientes, servicios y reservas
+
 **Grupo:** 05
-**Proyecto:** Sistema de pedidos para una tienda de tecnología
-**Repositorio:** https://github.com/Eduardo-Jara03/Proyecto-pedidos-tiendatecnologia-grupo05
 
-## 1. Resumen ejecutivo
+**Repositorio de trabajo:** https://github.com/Eduardo-Jara03/Proyecto-pedidos-tiendatecnologia-grupo05
 
-El proyecto desarrolla una solución web para registrar y administrar clientes, productos y pedidos de una tienda de tecnología. La entrega contempla frontend web, API REST con Express, persistencia SQLite y pruebas automatizadas. El trabajo colaborativo se organiza mediante Git/GitHub, ramas por funcionalidad, commits descriptivos, Pull Requests y resolución de conflictos documentada.
+**Versión del informe:** Adaptación al caso de la consigna.
 
-Esta copia recuperada incluye el frontend y la documentación disponible, el backend de clientes/productos, el esquema relacional, la ruta de pedidos recuperada y montada en Express, además de pruebas ampliadas. El código se verificó con 30 pruebas aprobadas en el entorno de verificación disponible.
+## Integrantes registrados
 
-## 2. Equipo de trabajo
+- Eduardo Jesús Jara Moya — U21302190
+- Lisbert Wiliams Galvan Zamudio — U22217814
+- Nery Emerson Velasquez Pacheco — U23272063
+- Carlos Fernando Rivera Hipolito — U23216154
+- Bruno Santiago Reyes Vicente — U19221035
 
-| Integrante | Código |
-|---|---|
-| Jara Moya, Eduardo Jesús | U21302190 |
-| Galvan Zamudio, Lisbert Wiliams | U22217814 |
-| Velasquez Pacheco, Nery Emerson | U23272063 |
-| Rivera Hipolito, Carlos Fernando | U23216154 |
-| Reyes Vicente, Bruno Santiago | U19221035 |
+Confirmar integrantes, asistencia y participación antes de la entrega.
 
-Las responsabilidades finales deben contrastarse con las tarjetas del tablero y los commits/PR reales; el autor de un commit no demuestra por sí solo la asignación de una actividad ni una revisión formal.
+## 1. Descripción de la solución
 
-## 3. Problema y solución
+Agenda Clara es una aplicación web para centralizar la gestión de clientes, servicios y reservas de una empresa de servicios. La interfaz web consume una API REST implementada con Node.js y Express, mientras SQLite persiste la información y mantiene relaciones entre clientes, servicios y reservas.
 
-La tienda necesita centralizar el registro de clientes, el catálogo de productos y los pedidos asociados. La solución presenta una interfaz TechStore y una API que valida las operaciones y conserva los datos relacionales en SQLite.
+## 2. Requerimientos considerados
 
-### Componentes técnicos
+La primera versión incluye registrar, modificar y consultar clientes; registrar y consultar servicios con precio y duración; registrar reservas asociadas a un cliente y un servicio con fecha y hora; consultar y cancelar reservas. La matriz de `docs/requerimientos-trazabilidad.md` identifica la actividad y el artefacto técnico asociado a cada requerimiento.
 
-- **Frontend:** HTML, CSS y JavaScript.
-- **Backend:** Node.js y Express.
-- **Persistencia:** SQLite con `better-sqlite3`, claves foráneas, restricciones e índices.
-- **Versionamiento:** Git y GitHub.
-- **Pruebas:** `node:test` y peticiones HTTP a una instancia temporal de la API.
+Se dejan para una versión posterior los recordatorios automáticos, reportes, dashboard de indicadores, pagos en línea e historial ampliado de clientes.
 
-## 4. Requerimientos funcionales
+## 3. Organización de actividades
 
-| ID | Requerimiento | Criterio verificable |
-|---|---|---|
-| RF-01 | Gestionar clientes | Registrar, consultar, buscar y actualizar; validar campos, correo y documento único |
-| RF-02 | Gestionar productos | Registrar, consultar, buscar y actualizar; validar código único y precio positivo; desactivar lógicamente |
-| RF-03 | Registrar pedidos | Asociar cliente y uno o varios productos activos con cantidades positivas |
-| RF-04 | Calcular importes | Calcular subtotal y total en backend usando el precio guardado en SQLite |
-| RF-05 | Consultar pedidos | Listar, buscar y obtener cabecera y detalles |
-| RF-06 | Mantener integridad | Usar claves foráneas, restricciones y transacciones para pedido y detalles |
-| RF-07 | Gestionar estado | Cancelar pedido y evitar una segunda cancelación |
-| RF-08 | Verificar el sistema | Exponer `/api/health` y ejecutar pruebas automatizadas |
+Se propone gestionar el trabajo en GitHub Projects con los estados Pendiente, Seleccionado, En progreso, En revisión y Hecho. El archivo `docs/tablero-actividades.csv` puede usarse como plantilla para cargar las actividades. El tablero en línea y sus capturas deben añadirse cuando el equipo lo configure realmente.
 
-## 5. Actividades y trazabilidad
+## 4. Estrategia de ramas
 
-La relación entre requerimientos, actividades, responsables y evidencia se detalla en [`matriz-trazabilidad.md`](matriz-trazabilidad.md). La secuencia de control definida es:
+La estrategia propuesta utiliza `main` para la versión estable, `develop` para integración y ramas `feature/*` para funcionalidades. Los cambios se proponen mediante Pull Requests, con revisión de otro integrante y pruebas antes de integrarse. Ver `docs/estrategia-ramas.md`.
 
-**Requisito → actividad → responsable → rama/commit → revisión del PR → integración → evidencia.**
+## 5. Trabajo colaborativo
 
-Una actividad solo se marca como terminada cuando el resultado puede verificarse. Las asignaciones que no estén demostradas por el tablero deben confirmarse con el equipo.
+La evidencia de contribuciones debe extraerse del historial real de commits, las actividades asignadas y las PR. No se atribuyen revisiones o tareas a integrantes sin comprobar los registros del repositorio y del tablero.
 
-## 6. Organización del repositorio y estrategia de ramificación
+## 6. Integración y revisión
 
-Se trabaja con una rama estable (`main`), una rama de integración (`develop`) y ramas temáticas para funcionalidades y documentación. Las ramas identificadas en el historial incluyen `feature/clientes`, `feature/productos`, `feature/pedidos`, `feature/backend-api`, `docs/flujo-git` y `docs/matriz-trazabilidad`.
+El procedimiento esperado es crear una PR hacia `develop`, ejecutar `npm test`, registrar comentarios del revisor, corregir observaciones y aceptar la integración solo después de la revisión. Deben incorporarse enlaces y capturas de una PR real antes de entregar.
 
-### Flujo de trabajo
+## 7. Gestión de conflictos
 
-1. Actualizar la rama base.
-2. Crear una rama para una tarea concreta.
-3. Implementar cambios pequeños y ejecutar pruebas.
-4. Registrar commits descriptivos.
-5. Publicar la rama y abrir un Pull Request hacia `develop`.
-6. Revisar cambios y resolver observaciones.
-7. Integrar mediante merge solo después de la revisión.
-8. Comprobar el estado final y registrar la evidencia.
+La consigna solicita al menos un conflicto producido por trabajo simultáneo. `docs/conflicto-git-plantilla.md` contiene el registro que debe completarse tras reproducir y resolver un conflicto real. Esta plantilla no representa por sí sola evidencia de que el conflicto haya ocurrido.
 
-Los PR e historiales de merge existentes son evidencia de colaboración e integración. La existencia de un PR no prueba que haya recibido una aprobación formal; debe adjuntarse la vista real de Reviews cuando exista.
+## 8. Gestión de versiones
 
-## 7. Gestión de actividades y proyecto
+La V1 prevista incluye los tres módulos funcionales y pruebas automatizadas. Las funciones posteriores quedan enumeradas en `docs/versionado-v1.md`. La versión no debe declararse liberada hasta verificar los flujos manualmente, revisar e integrar las PR y crear un tag real (por ejemplo `v1.0.0`).
 
-El tablero del equipo debe usar los cinco estados solicitados:
+## 9. Pruebas y estado técnico
 
-1. **Pendiente:** tarea identificada.
-2. **Seleccionado:** tarea priorizada para iniciar.
-3. **En progreso:** tarea en ejecución.
-4. **En revisión:** tarea enviada a revisión.
-5. **Hecho:** tarea revisada, integrada y con evidencia.
+La adaptación incluye pruebas automatizadas de API para clientes, servicios y reservas. En el entorno de preparación se ejecutó `npm test` y se obtuvieron **20 pruebas aprobadas y 0 fallidas**. El equipo debe repetir el comando en su Windows después de copiar estos archivos y guardar la salida como evidencia propia. La interfaz debe probarse manualmente en navegador.
 
-Cada tarjeta debe indicar requisito, descripción, responsable, prioridad, rama, PR/commit y evidencia de cierre. El tablero real y sus responsables no se pueden reconstruir con certeza solo desde el código: deben adjuntarse capturas o un enlace accesible.
+## 10. Evidencias que deben incorporarse
 
-## 8. Conflictos de fusión
+- Captura y enlace al tablero real de GitHub Projects.
+- Enlace al repositorio y ramas publicadas.
+- PR con revisión verificable de un compañero.
+- Evidencia de contribuciones y asignación de actividades.
+- Captura/registro del conflicto real y su resolución.
+- Tag y commit de la versión estable.
+- Evidencia de ejecución en Windows y prueba manual de la aplicación.
 
-El archivo [`resolucion-conflictos.md`](resolucion-conflictos.md) documenta tres conflictos relacionados con `README.md`: entre `develop` y `feature/pedidos`, durante la integración de `feature/pedidos` a `develop`, y al integrar `develop` a `main`. El documento identifica causas, archivo afectado y resolución registrada.
+## Conclusiones
 
-Para la entrega, adjuntar capturas de las marcas de conflicto y del merge final en Git/GitHub. La descripción escrita no sustituye las capturas originales.
-
-## 9. Incidencias, solución y prevención
-
-El archivo [`incidencias.md`](incidencias.md) registra tres incidencias técnicas: bloqueo de permisos en una unidad FAT32, fallo de instalación de `better-sqlite3` por Python no ejecutable y ausencia del montaje `/api/pedidos` en Express. Incluye impacto, causa, contención, corrección y medidas preventivas.
-
-## 10. Pruebas y verificación
-
-Se ejecutó la suite automatizada con estos resultados:
-
-| Grupo de pruebas | Casos aprobados |
-|---|---:|
-| Salud, clientes, productos y validaciones | 18 |
-| Pedidos, persistencia, edición, cancelación y eliminación | 12 |
-| **Total** | **30 aprobados, 0 fallidos** |
-
-Comandos de reproducción:
-
-```powershell
-npm.cmd install
-npm.cmd test
-npm.cmd start
-```
-
-Las pruebas usan una base de datos temporal y no dependen de los datos de la base local. La instalación debe verificarse en el equipo que realiza la entrega, porque `better-sqlite3` puede requerir un binario precompilado compatible o herramientas de compilación.
-
-## 11. Alcance de la versión 1 y trabajo pendiente
-
-### Incluido en esta copia recuperada
-
-- Interfaz de clientes, productos y pedidos.
-- API REST para clientes, productos y pedidos.
-- Esquema SQLite y restricciones de integridad.
-- Validación de datos, búsqueda, edición, cancelación y eliminación de pedidos.
-- Pruebas automatizadas y documentación de endpoints.
-- Matriz de trazabilidad, registro de incidencias y documentación de conflictos.
-
-### Pendiente de evidencia o confirmación externa
-
-- Capturas del tablero real con los cinco estados y tareas asignadas.
-- Evidencia de colaboración y participación de cada integrante.
-- Capturas/enlaces de Reviews reales de los PR; no se deben inventar aprobaciones.
-- Capturas del conflicto en el momento de producirse y de su resolución.
-- Confirmación del PR final del backend y de la integración efectiva en `develop`.
-- Captura de la ejecución de las 30 pruebas en el equipo de entrega y evidencia de la exposición.
-
-## 12. Conclusiones
-
-La solución recuperada reúne la interfaz, la API y la persistencia relacional, y amplía las pruebas para cubrir pedidos además de clientes y productos. El uso de transacciones e integridad referencial reduce el riesgo de registrar pedidos incompletos. La trazabilidad y el historial de Git ayudan a relacionar cambios y documentación con las actividades del equipo.
-
-Antes de entregar, el equipo debe validar el entorno de ejecución y adjuntar las evidencias externas indicadas. No deben marcarse como revisados, aprobados o integrados aquellos cambios cuyo estado real no se haya comprobado en GitHub.
+La adaptación técnica orienta el proyecto al caso requerido: clientes, servicios y reservas. El cumplimiento completo de la evaluación también depende de ejecutar el código en el entorno del equipo y aportar evidencias auténticas del tablero, la colaboración, las revisiones, la resolución de conflictos y la versión liberada. No debe declararse la entrega final hasta completar y verificar esos puntos.
