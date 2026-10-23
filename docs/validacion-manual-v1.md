@@ -17,7 +17,7 @@
 
 ### Resultado de pruebas automatizadas
 - Ejecución local compartida: 
-pm test.
+`npm test`.
 - Resultado reportado: 21 tests en total y 0 fallidos.
 - El total del ejecutor incluye las suites contenedoras; no equivale a 21 subpruebas individuales.
 - Pendiente para el informe: cotejar la captura guardada con la salida real de la ejecución.
