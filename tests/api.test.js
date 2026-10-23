@@ -41,6 +41,16 @@ test("V1 Agenda Clara: API y gestión de clientes", async (t) => {
     const one = await request(`/api/clientes/${clienteId}`); assert.equal(one.status, 200); assert.equal(one.body.documento, "AGENDA-CLIENTE-001");
     const list = await request("/api/clientes?q=AGENDA-CLIENTE-001"); assert.equal(list.status, 200); assert.ok(list.body.some(c => c.id === clienteId));
   });
+  await t.test("devuelve HTTP 400 y JSON ante un cuerpo JSON malformado", async () => {
+    const response = await fetch(`${baseUrl}/api/clientes`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: "{nombre: JSON roto"
+    });
+    const body = await response.json();
+    assert.equal(response.status, 400);
+    assert.match(body.error, /JSON inválido/i);
+  });
   await t.test("rechaza datos incompletos y correo inválido", async () => {
     const missing = await request("/api/clientes", json("POST", { nombre: "Sin datos" })); assert.equal(missing.status, 400);
     const email = await request("/api/clientes", json("POST", { nombre: "Prueba", documento: "AGENDA-CLIENTE-002", correo: "no-es-correo" })); assert.equal(email.status, 400);
