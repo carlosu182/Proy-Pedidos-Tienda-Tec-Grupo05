@@ -2,7 +2,7 @@
 
 ## 1. Objetivo
 
-Relacionar los requerimientos funcionales de Agenda Clara V1 con el desarrollo técnico, las evidencias disponibles, la revisión y la integración en el repositorio actual. La matriz distingue la implementación integrada de las evidencias que todavía deben comprobarse; no se atribuyen responsables ni aprobaciones sin respaldo verificable.
+Relacionar los requerimientos funcionales de Agenda Clara V1 con el desarrollo técnico, las actividades, los responsables, las evidencias, la revisión y la integración. Se diferencia la presencia de código en la rama de integración de la comprobación individual de cada requisito.
 
 **Repositorio:** https://github.com/carlosu182/Proy-Pedidos-Tienda-Tec-Grupo05  
 **Tablero de gestión:** https://github.com/users/carlosu182/projects/1  
@@ -12,20 +12,20 @@ Relacionar los requerimientos funcionales de Agenda Clara V1 con el desarrollo t
 
 | Req. | Actividad | Responsable | Desarrollo técnico | Revisión | Integración |
 |---|---|---|---|---|---|
-| RF01 | Registrar clientes | Por verificar | `server/routes/clientes.js` | Revisión específica pendiente de acreditar | Código integrado en `develop`; validación individual pendiente |
-| RF02 | Modificar clientes | Por verificar | `PUT /api/clientes/:id` | Revisión específica pendiente de acreditar | Código integrado en `develop`; validación individual pendiente |
-| RF03 | Consultar y buscar clientes | Por verificar | `GET /api/clientes` | Revisión específica pendiente de acreditar | Código integrado en `develop`; validación individual pendiente |
-| RF04 | Registrar servicios | Por verificar | `POST /api/servicios` | Revisión específica pendiente de acreditar | Código integrado en `develop`; validación individual pendiente |
-| RF05 | Definir precio y duración de servicios | Por verificar | Validaciones del módulo de servicios | Revisión específica pendiente de acreditar | Código integrado en `develop`; validación individual pendiente |
-| RF06 | Consultar servicios | Por verificar | `GET /api/servicios` | Revisión específica pendiente de acreditar | Código integrado en `develop`; validación individual pendiente |
-| RF07 | Registrar reservas vinculadas a cliente y servicio | Por verificar | `POST /api/reservas` | Revisión específica pendiente de acreditar | Código integrado en `develop`; validación individual pendiente |
-| RF08 | Registrar fecha y hora de reserva | Por verificar | Validación de fecha y hora | Revisión específica pendiente de acreditar | Código integrado en `develop`; validación individual pendiente |
-| RF09 | Consultar reservas | Por verificar | `GET /api/reservas` | Revisión específica pendiente de acreditar | Código integrado en `develop`; validación individual pendiente |
-| RF10 | Cancelar reservas | Por verificar | `PATCH /api/reservas/:id/cancelar` | Revisión específica pendiente de acreditar | Código integrado en `develop`; validación individual pendiente |
+| RF01 | Registrar clientes | Por confirmar con el equipo | `server/routes/clientes.js` | Revisión específica no acreditada | Código presente en `develop`; validar flujo completo |
+| RF02 | Modificar clientes | Por confirmar con el equipo | `PUT /api/clientes/:id` | Revisión específica no acreditada | Código presente en `develop`; validar flujo completo |
+| RF03 | Consultar y buscar clientes | Por confirmar con el equipo | `GET /api/clientes` | Revisión específica no acreditada | Código presente en `develop`; validar flujo completo |
+| RF04 | Registrar servicios | Por confirmar con el equipo | `POST /api/servicios` | Revisión específica no acreditada | Código presente en `develop`; validar flujo completo |
+| RF05 | Definir precio y duración de servicios | Por confirmar con el equipo | Validaciones del módulo de servicios | Revisión específica no acreditada | Código presente en `develop`; validar flujo completo |
+| RF06 | Consultar servicios | Por confirmar con el equipo | `GET /api/servicios` | Revisión específica no acreditada | Código presente en `develop`; validar flujo completo |
+| RF07 | Registrar reservas vinculadas a cliente y servicio | Por confirmar con el equipo | `POST /api/reservas` | Revisión específica no acreditada | Código presente en `develop`; validar flujo completo |
+| RF08 | Registrar fecha y hora de reserva | Por confirmar con el equipo | Validación de fecha y hora | Revisión específica no acreditada | Código presente en `develop`; validar flujo completo |
+| RF09 | Consultar reservas | Por confirmar con el equipo | `GET /api/reservas` | Revisión específica no acreditada | Código presente en `develop`; validar flujo completo |
+| RF10 | Cancelar reservas | Por confirmar con el equipo | `PATCH /api/reservas/:id/cancelar` | Revisión específica no acreditada | Código presente en `develop`; validar flujo completo |
 
-La integración general de cambios en `develop` está registrada en el historial Git. Esto no sustituye la comprobación individual de cada requisito, ni prueba por sí solo una revisión específica de cada fila.
+La integración general del proyecto en `develop` está registrada en el historial de Git. No se considera que exista una revisión individual por requisito si no está documentada en una Pull Request o en una evidencia de revisión verificable.
 
-## 3. Requerimientos previstos para versiones posteriores
+## 3. Requerimientos de versiones posteriores
 
 - RF11: Recordatorios automáticos.
 - RF12: Reportes.
@@ -33,66 +33,87 @@ La integración general de cambios en `develop` está registrada en el historial
 - RF14: Pagos en línea.
 - RF15: Historial ampliado de clientes.
 
-Estas funciones se mantienen fuera del alcance declarado para Agenda Clara V1. Confirmar esta codificación con la consigna original antes de la entrega definitiva.
+Estas funciones están fuera del alcance mínimo declarado para V1. La codificación debe cotejarse con la consigna original antes de entregar.
 
 ## 4. Evidencias técnicas
 
 ### 4.1 Integración inicial
 
-- Pull Request: [PR #1](https://github.com/carlosu182/Proy-Pedidos-Tienda-Tec-Grupo05/pull/1).
-- Commit de integración registrado: `5f951cf`.
-- Rama de integración: `develop`.
+- [PR #1 — Incorporar proyecto](https://github.com/carlosu182/Proy-Pedidos-Tienda-Tec-Grupo05/pull/1).
+- Commit de integración citado: `5f951cf`.
 
 ### 4.2 Manejo de JSON inválido
 
-- Pull Request: [PR #15](https://github.com/carlosu182/Proy-Pedidos-Tienda-Tec-Grupo05/pull/15).
-- Commit de cambio citado: `3d6c0b1`.
-- Commit de integración citado: `799c2ea`.
-- Cambio descrito: respuesta HTTP 400 en formato JSON ante solicitudes cuyo cuerpo contiene JSON malformado.
-- Resultado de pruebas registrado: 21 tests reportados, 21 aprobados y 0 fallidos.
-- Estado: cambio integrado en `develop`.
+- [PR #15 — cierre técnico](https://github.com/carlosu182/Proy-Pedidos-Tienda-Tec-Grupo05/pull/15).
+- Commit de cambio: `3d6c0b1`.
+- Commit de integración: `799c2ea`.
+- Cambio: respuesta HTTP 400 en formato JSON para solicitudes con cuerpo JSON malformado.
+- La PR registra 21 pruebas aprobadas y 0 fallidas; el resultado de la ejecución local también se compartió posteriormente.
 
 ### 4.3 Pruebas automatizadas
 
-- Comando ejecutado: `npm test`.
-- Resultado compartido desde la ejecución local: 21 tests reportados, 21 aprobados, 0 fallidos, 0 cancelados y 0 omitidos.
-- Archivo disponible: [`docs/evidencias/pruebas-automatizadas.txt`](evidencias/pruebas-automatizadas.txt).
+- Comando: `npm test`.
+- Resultado local compartido: 21 tests reportados, 21 aprobados, 0 fallidos, 0 cancelados y 0 omitidos.
+- Resumen disponible: [`docs/evidencias/pruebas-automatizadas.txt`](evidencias/pruebas-automatizadas.txt).
 
-El archivo `.txt` es un resumen textual de los resultados; no es una captura de pantalla de la consola. Si la consigna requiere una captura, debe guardarse una imagen auténtica de la ejecución en Windows y añadirse al repositorio. No se debe referenciar `pruebas-automatizadas.png` hasta que ese archivo exista y haya sido verificado.
+El `.txt` es un resumen de resultados, no una captura de pantalla. Si la consigna solicita evidencia visual, debe incorporarse una captura auténtica de la terminal de Windows. No se referencia un `.png` hasta que ese archivo exista en el repositorio.
 
 ### 4.4 Validación manual
 
-El documento [`docs/validacion-manual-v1.md`](validacion-manual-v1.md) registra cuatro flujos: registro de clientes, registro de servicios, creación de reservas y cancelación de reservas. La documentación indica que no se conservan capturas individuales de cada operación; por tanto, la evidencia visual debe completarse si la entrega la exige.
+El documento [`docs/validacion-manual-v1.md`](validacion-manual-v1.md) registra cuatro flujos principales: registro de cliente, registro de servicio, creación de reserva y cancelación. La evidencia revisada no contiene capturas individuales de esos flujos. Deben repetirse en la versión integrada y capturarse si el profesor las solicita.
 
-## 5. Gestión y colaboración
+## 5. Tablero y colaboración
 
-| Actividad | Estado de evidencia | Acción pendiente |
+El tablero real fue mostrado en una captura del equipo. En ella se observan los cinco estados exigidos: **Pendiente, Seleccionado, En progreso, En revisión y Hecho**. La captura también muestra estas tarjetas:
+- Pendiente: #9 «Validar y liberar Agenda Clara V1», #11 «Actualizar informe final y PDF».
+- En revisión: #8 «Revisar cambios mediante Pull Request», #10 «Completar trazabilidad de requisitos».
+- Hecho: #2 clientes, #3 servicios, #4 reservas, #5 pruebas automatizadas, #6 integración en GitHub y #7 completar tablero y asignar responsables.
+
+La captura acredita la existencia de las columnas y las tarjetas visibles en ese momento. No prueba por sí sola el cierre de las tareas ni la identidad real de todas las personas representadas por los avatares.
+
+## 6. Revisión de cambios
+
+Las PR #15, #16 y #17 están integradas, pero los registros de revisiones consultados estaban vacíos. La tarea #8 describe como criterio de finalización una revisión auténtica por otro integrante, pero fue cerrada sin comentarios y sin que aparezca una revisión registrada.
+
+Por ello, no se declara cumplida la revisión por pares. Un integrante distinto del autor debe revisar una PR apropiada, registrar observaciones reales y aprobarla si corresponde. La evidencia debe incluir el enlace a la PR y el registro de revisión de GitHub.
+
+## 7. Conflicto de Git
+
+El archivo [`docs/resolucion-conflictos.md`](resolucion-conflictos.md) menciona conflictos históricos en `README.md` y un ejercicio controlado. Los commits `82f49bd`, `685d535`, `2e25c5f`, `75f39c3` y `283520c` no quedaron verificados en las ramas consultadas del repositorio actual.
+
+Criterio de cierre:
+1. Verificar esos commits en el repositorio de origen; o
+2. Reproducir en una rama del repositorio actual un conflicto real entre dos ramas.
+3. Guardar el resultado del conflicto, la resolución, el commit final y una captura auténtica de la terminal.
+4. Documentar qué ramas/archivo participaron y quién intervino realmente.
+
+No se declara el requisito cumplido solo por existir un documento que lo describe.
+
+## 8. Versionado y liberación
+
+La auditoría previa no confirmó una etiqueta Git `v1.0.0` ni una GitHub Release. Antes de crear una versión, deben completarse la validación manual y la revisión requerida. Si la consigna exige una liberación formal, publicar el tag/release y conservar un enlace o captura verificable.
+
+## 9. Estado de cierre
+
+| Requisito | Estado | Criterio pendiente |
 |---|---|---|
-| Integración técnica en `develop` | Integración de PR #15 registrada; commit `799c2ea` | Conservar enlace del merge |
-| Consolidación documental de la matriz | Integrada mediante PR #16, según el historial documentado | Comprobar consistencia con la versión final |
-| Revisión de cambios por otro integrante | No acreditada en los registros de revisión consultados | Verificar una revisión auténtica en GitHub |
-| Tablero colaborativo | Enlace disponible | Confirmar los cinco estados, tareas, responsables y prioridades en el tablero real |
-| Conflicto de Git | Documentación existente; origen de parte de la evidencia por verificar | Verificar commits en su repositorio de origen o reproducir un conflicto real |
-| Liberación estable | No confirmada en la auditoría realizada | Comprobar rama/tag/release requeridos |
-| Informe y PDF definitivos | En preparación | Añadir capturas y enlaces reales del resto de evidencias |
+| Código integrado en `develop` | Integraciones registradas | Comprobar flujos en versión integrada |
+| Pruebas automatizadas | 21 reportadas; 0 fallidas | Captura real si la consigna la exige |
+| Tablero con cinco estados | Visible en captura del usuario | Verificar asignaciones y mover tareas solo según avance real |
+| Responsables y contribuciones | Parcial | Confirmar nombres, tareas y commits |
+| Revisión por pares | No acreditada | Revisión auténtica de otro integrante |
+| Conflicto Git | Parcial / no acreditado suficientemente | Verificar commits o reproducir conflicto y guardar evidencia |
+| Tag/release | No confirmada | Verificar requisito; publicar solo tras completar validación |
+| PDF final de entrega | En preparación | Integrar las evidencias auténticas restantes |
 
-## 6. Referencias históricas
+## 10. Criterios de cierre
 
-El desarrollo previo incluye referencias al repositorio [Eduardo-Jara03/Proyecto-pedidos-tiendatecnologia-grupo05](https://github.com/Eduardo-Jara03/Proyecto-pedidos-tiendatecnologia-grupo05).
+- Confirmar integrantes y contribuciones reales.
+- Mantener el tablero accesible; capturar las columnas y el detalle de tareas/responsables.
+- Obtener una revisión real por otro integrante.
+- Repetir la validación manual y conservar capturas auténticas.
+- Verificar o reproducir el conflicto Git.
+- Comprobar si se exige tag o GitHub Release y generar la versión solo después de validar.
+- Integrar las evidencias en el PDF final siguiendo los 12 puntos de la consigna.
 
-Los commits y documentos de ese repositorio deben tratarse como antecedentes históricos, no como evidencia automática de integración, colaboración o revisión en el repositorio actual. Cualquier referencia usada como prueba debe enlazar al commit o archivo original verificable.
-
-## 7. Criterios de cierre
-
-Antes de declarar finalizada la entrega:
-
-- Confirmar que integrantes, responsables y contribuciones coinciden con datos reales.
-- Verificar directamente el tablero publicado y los cinco estados requeridos.
-- Registrar una revisión auténtica por otro integrante, si así lo pide la consigna.
-- Conservar el resultado actualizado de `npm test` y una captura real de consola si se exige.
-- Completar la validación manual de clientes, servicios y reservas y guardar las evidencias.
-- Verificar el origen de los commits históricos citados o reproducir un conflicto real, resolviéndolo y conservando su commit y captura.
-- Confirmar si se exige rama estable, etiqueta `v1.0.0` o GitHub Release; no declarar que existen hasta verificarlos.
-- Incorporar las evidencias y los enlaces correctos en el PDF final.
-
-La matriz diferencia integración técnica, documentación disponible y requisitos cuya evidencia está pendiente. La entrega no se declarará completamente cerrada mientras queden criterios sin respaldo verificable.
+Esta matriz es un registro del estado de las evidencias revisadas; no constituye una calificación ni declara cerradas las actividades cuyo respaldo sigue pendiente.

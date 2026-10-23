@@ -2,15 +2,12 @@ Agenda Clara V1 - Pruebas automatizadas
 Comando: npm test
 Ejecutor: Node.js Test Runner
 
-Resultado:
-Tests totales: 21
+Resultado compartido de la ejecución local:
+Tests reportados: 21
 Aprobados: 21
 Fallidos: 0
 Cancelados: 0
 Omitidos: 0
 
-Suites:
-- API y gestion de clientes
-- Servicios y reservas
-
-Estado: APROBADO
+Nota: el total reportado por el ejecutor incluye suites contenedoras y no implica necesariamente 21 casos de prueba individuales distintos.
+Este archivo es un resumen textual; no sustituye una captura de terminal si la consigna la exige.
