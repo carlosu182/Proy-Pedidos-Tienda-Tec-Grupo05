@@ -34,7 +34,7 @@ Agenda Clara es una aplicación web destinada a una empresa de servicios que nec
 | RF08 | Registrar fecha y hora de reserva | V1 |
 | RF09 | Consultar reservas | V1 |
 | RF10 | Cancelar reservas | V1 |
-| RF11 | Cancelar reservas | V1 |
+| RF11 | Recordatorios automáticos | Versión posterior |
 | RF12 | Recordatorios automáticos | Versión posterior |
 | RF13 | Reportes | Versión posterior |
 | RF14 | Dashboard de indicadores | Versión posterior |
@@ -110,7 +110,7 @@ En el cierre técnico registrado en la PR #15 se ejecutó `npm test`, con el sig
 
 La PR #15 también registra la ejecución de `npm ci` y la ausencia de vulnerabilidades reportadas durante esa instalación. Estos resultados corresponden a las validaciones consignadas en dicha Pull Request.
 
-El archivo `docs/evidencias/pruebas-automatizadas.png` está disponible como evidencia. Antes de entregar, se debe confirmar que la captura refleje la ejecución de 21 pruebas; no debe atribuirse a la imagen un resultado que no muestre.
+El resumen textual de la ejecución está guardado en `docs/evidencias/pruebas-automatizadas.txt` y registra 21 tests reportados, 21 aprobados y 0 fallidos.
 
 ### 7.2 Manejo de JSON inválido
 
