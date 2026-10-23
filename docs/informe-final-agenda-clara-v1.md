@@ -35,11 +35,10 @@ Agenda Clara es una aplicación web destinada a una empresa de servicios que nec
 | RF09 | Consultar reservas | V1 |
 | RF10 | Cancelar reservas | V1 |
 | RF11 | Recordatorios automáticos | Versión posterior |
-| RF12 | Recordatorios automáticos | Versión posterior |
-| RF13 | Reportes | Versión posterior |
-| RF14 | Dashboard de indicadores | Versión posterior |
-| RF15 | Pagos en línea | Versión posterior |
-
+| RF12 | Reportes | Versión posterior |
+| RF13 | Dashboard de indicadores | Versión posterior |
+| RF14 | Pagos en línea | Versión posterior |
+| RF15 | Historial ampliado de clientes | Versión posterior |
 La trazabilidad de estos requerimientos se documenta en `docs/requerimientos-trazabilidad.md` y `docs/matriz-trazabilidad.md`.
 
 ## 3. Organización del proyecto y repositorio
