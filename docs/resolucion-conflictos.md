@@ -1,44 +1,48 @@
 # Gestión de conflictos — Agenda Clara
 
-## Objetivo
+## 1. Objetivo
 
-Registrar la reproducción, resolución y verificación de un conflicto de contenido de Git durante la preparación de la entrega.
+Documentar los conflictos de Git identificados durante el desarrollo y la preparación de la entrega, indicando su alcance y las limitaciones de la evidencia disponible.
 
-## Ramas involucradas
+## 2. Antecedentes de conflictos en el repositorio
 
-- `evidencia/conflicto-base`: archivo inicial para reproducir el caso.
-- `evidencia/conflicto-a`: primera variante del contenido.
-- `evidencia/conflicto-b`: segunda variante y rama donde se resolvió el conflicto.
+El historial disponible incluye antecedentes de resolución de conflictos relacionados con el archivo `README.md`, entre ellos:
 
-## Origen del conflicto
+- `5710faa`: `merge: resolver conflictos entre develop y main` — verificar el mensaje y el contexto exacto del commit antes de atribuirle un conflicto específico.
+- `da94043`: `merge: resolver conflicto en README al integrar feature/pedidos`.
+- `b829d67`: `docs: agregar conflicto 3 resuelto al integrar develop en main`.
 
-Las ramas A y B modificaron la misma línea del archivo `docs/prueba-conflicto-git.txt` con contenidos diferentes.
+Estos antecedentes pertenecen al historial Git disponible. Para describir con precisión cada conflicto, debe consultarse el contenido del commit y sus padres.
 
-Al integrar la rama A en la rama B, Git informó:
+## 3. Ejercicio controlado documentado
 
-`CONFLICT (content): Merge conflict in docs/prueba-conflicto-git.txt`
+Una versión documental presentada en la rama de revisión `docs/evidencias-conflicto` describe un ejercicio controlado en `docs/prueba-conflicto-git.txt`.
 
-La integración automática se detuvo y fue necesaria una resolución manual.
+Según ese documento, las ramas `evidencia/conflicto-a` y `evidencia/conflicto-b` modificaron la misma línea y requirieron una resolución manual.
 
-## Resolución aplicada
+La documentación de esa rama identifica los siguientes commits:
 
-Se integraron ambos objetivos en una única línea:
+- Preparación: `82f49bd`.
+- Primera variante: `685d535`.
+- Segunda variante: `2e25c5f`.
+- Resolución: `75f39c3`.
+- Documentación: `283520c`.
 
-`Resolucion: se integran la gestion de clientes y servicios con la gestion de reservas y horarios.`
+**Limitación de verificación:** estos cinco identificadores no aparecen en el historial de las ramas disponibles en el clon revisado. Por tanto, se conservan como referencias declaradas por la documentación de revisión, pero no se consideran verificados en el historial actual.
 
-La decisión permitió conservar el propósito de ambas variantes sin mantener los marcadores de conflicto de Git.
+## 4. Alcance de la evidencia
 
-## Verificación y evidencia
+Los antecedentes descritos no deben presentarse como conflictos del código funcional de clientes, servicios o reservas sin evidencia que lo demuestre.
 
-- Preparación del archivo: commit `82f49bd`.
-- Primera variante: commit `685d535`.
-- Segunda variante: commit `2e25c5f`.
-- Resolución del conflicto: commit `75f39c3`.
-- Documentación del caso: commit `283520c`.
-- Rama publicada con la resolución: `evidencia/conflicto-b`.
+Tampoco se atribuyen revisiones, aprobaciones o contribuciones a integrantes sin registros verificables.
 
-Este conflicto demuestra una resolución real de Git sobre un archivo de evidencia. No debe describirse como un conflicto surgido en el código funcional de clientes, servicios o reservas.
+## 5. Verificaciones pendientes
 
-## Alcance y limitaciones
+- Confirmar el repositorio de origen de los cinco commits del ejercicio controlado.
+- Verificar los commits y sus relaciones de parentesco en el repositorio correspondiente.
+- Incorporar enlaces verificables o capturas de la reproducción y resolución.
+- Confirmar si el ejercicio controlado debe mantenerse como evidencia histórica o si se reproducirá en el repositorio actual.
 
-El caso documenta el procedimiento técnico de conflicto, las ramas involucradas y la decisión adoptada. La participación de otro integrante debe confirmarse con evidencia real; no se atribuyen revisiones ni contribuciones que no estén verificadas.
+## 6. Criterio de cierre
+
+La documentación de conflictos se considerará suficientemente respaldada cuando las referencias puedan verificarse en el repositorio de origen y se identifique con claridad qué evidencia pertenece al repositorio actual y cuál corresponde a antecedentes históricos.
