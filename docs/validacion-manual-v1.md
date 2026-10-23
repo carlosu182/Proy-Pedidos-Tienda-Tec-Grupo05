@@ -1,29 +1,16 @@
-﻿# Registro de validación manual — Agenda Clara V1
+﻿## Estado de cierre técnico y pendientes
 
-## Objetivo
-Comprobar desde la interfaz web los flujos principales de clientes, servicios y reservas.
+### Completado y documentado
+- La PR #15 se integró en `develop` mediante el commit `799c2ea`.
+- El cambio para manejar solicitudes con JSON malformado quedó integrado.
+- La PR #15 registra 21 pruebas automatizadas aprobadas y 0 fallidas.
 
-## Entorno
-- Aplicación local: http://localhost:3000
-- Base de datos: SQLite
-- Fecha de validación: 20/10/2026
+### Pendiente de verificar
+- Confirmar que la captura `docs/evidencias/pruebas-automatizadas.png` refleja la ejecución de 21 pruebas.
+- Completar la revisión documental por otro integrante y verificar que la aprobación esté registrada en GitHub.
+- Comprobar el tablero de GitHub Projects y sus cinco estados.
+- Verificar la procedencia de la evidencia del conflicto de Git.
+- Confirmar la preparación de la rama estable y la existencia de la etiqueta `v1.0.0`, si corresponde.
+- Actualizar el informe final y el PDF con los enlaces y evidencias definitivos.
 
-## Resultados
-
-| ID | Prueba | Resultado | Evidencia observada |
-|---|---|---|---|
-| VM-01 | Registrar un cliente desde la interfaz | Aprobada | El usuario confirmó que pudo registrar el cliente. |
-| VM-02 | Registrar un servicio | Aprobada | El usuario confirmó que el servicio quedó registrado. |
-| VM-03 | Crear una reserva vinculando cliente y servicio | Aprobada | El usuario confirmó que la reserva se creó correctamente. |
-| VM-04 | Cancelar la reserva creada | Aprobada | El usuario confirmó que la reserva se canceló. |
-
-## Alcance y limitaciones
-Este registro refleja las pruebas manuales realizadas y confirmadas durante la validación. No incluye capturas individuales de cada operación ni acredita pruebas adicionales que no se hayan ejecutado.
-
-Las pruebas automatizadas se registran por separado en `docs/evidencias/pruebas-automatizadas.png`.
-
-## Pendientes de cierre
-- Completar la revisión del Pull Request por otro integrante.
-- Verificar el tablero real de GitHub Projects.
-- Integrar la rama en `develop` después de la revisión.
-- Crear y verificar la etiqueta de versión estable `v1.0.0`.
+**Nota:** la integración de la PR #15 acredita el cierre de ese cambio técnico, pero no significa que toda la entrega académica esté finalizada.

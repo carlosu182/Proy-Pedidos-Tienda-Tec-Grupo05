@@ -1,27 +1,28 @@
 # Informe de entrega — Agenda Clara V1
 ## Sistema de gestión de clientes, servicios y reservas
 
-**Asignatura:** Herramientas de Desarrollo  
-**Grupo:** 05  
-**Repositorio:** https://github.com/Eduardo-Jara03/Proyecto-pedidos-tiendatecnologia-grupo05  
-**Versión del documento:** Informe adaptado a la consigna oficial
+**Asignatura:** Herramientas de Desarrollo
+**Grupo:** 05
+**Repositorio:** https://github.com/carlosu182/Proy-Pedidos-Tienda-Tec-Grupo05
+**Versión del documento:** Informe de cierre técnico y documental
 
 ### Integrantes registrados
+
 - Eduardo Jesús Jara Moya — U21302190
 - Lisbert Wiliams Galvan Zamudio — U22217814
 - Nery Emerson Velasquez Pacheco — U23272063
 - Carlos Fernando Rivera Hipolito — U23216154
 - Bruno Santiago Reyes Vicente — U19221035
 
-> Antes de entregar, el equipo debe confirmar la lista, las responsabilidades reales y la participación de cada integrante. La consigna también limita la calificación de quien no asista a la sustentación.
+> Antes de entregar, el equipo debe confirmar los integrantes, las responsabilidades reales y la participación de cada persona. La consigna también establece condiciones relacionadas con la asistencia a la sustentación.
 
 ## 1. Descripción de la solución
 
-Agenda Clara es una aplicación web de primera versión destinada a una empresa de servicios que necesita centralizar la administración de clientes, catálogo de servicios y reservas. La interfaz web se comunica con una API REST desarrollada con Node.js y Express. La información se persiste en SQLite con relaciones entre clientes, servicios y reservas.
+Agenda Clara es una aplicación web destinada a una empresa de servicios que necesita centralizar la administración de clientes, el catálogo de servicios y las reservas. La interfaz web se comunica con una API REST desarrollada con Node.js y Express. La información se persiste en SQLite mediante relaciones entre clientes, servicios y reservas.
 
 ## 2. Requerimientos y alcance de la V1
 
-| Código | Requerimiento | Versión |
+| Código | Requerimiento | Alcance |
 |---|---|---|
 | RF01 | Registrar clientes | V1 |
 | RF02 | Modificar información de clientes | V1 |
@@ -40,40 +41,58 @@ Agenda Clara es una aplicación web de primera versión destinada a una empresa 
 | RF15 | Pagos en línea | Versión posterior |
 | RF16 | Historial ampliado de clientes | Versión posterior |
 
-Los requerimientos y las actividades asociadas también están descritos en `docs/requerimientos-trazabilidad.md` y `docs/matriz-trazabilidad.md`.
+La trazabilidad de estos requerimientos se documenta en `docs/requerimientos-trazabilidad.md` y `docs/matriz-trazabilidad.md`.
 
 ## 3. Organización del proyecto y repositorio
 
-El proyecto se trabaja en el repositorio GitHub indicado en la carátula. El historial de Git registra los cambios del código. Para que la organización quede demostrada, el equipo debe mantener el repositorio y el tablero accesibles, y aportar los enlaces de las ramas y Pull Requests que correspondan a esta adaptación.
+El repositorio utilizado para la adaptación y el cierre técnico es:
+
+https://github.com/carlosu182/Proy-Pedidos-Tienda-Tec-Grupo05
+
+La rama `develop` funciona como rama de integración. El historial de Git registra la incorporación de cambios mediante Pull Requests.
+
+El commit `799c2ea` corresponde a la integración de la PR #15, que incorporó el manejo de solicitudes con JSON malformado y actualizó los metadatos del repositorio en `package.json`.
+
+La integración de este cambio técnico no demuestra por sí sola que todas las actividades de gestión, revisión entre compañeros y liberación académica estén completas.
 
 ## 4. Gestión de actividades
 
-La consigna solicita un tablero con cinco estados: **Pendiente, Seleccionado, En progreso, En revisión y Hecho**. El archivo `docs/tablero-actividades.csv` sirve como base para cargar las tareas en GitHub Projects u otra herramienta colaborativa elegida por el equipo.
+La consigna solicita un tablero colaborativo con cinco estados: **Pendiente, Seleccionado, En progreso, En revisión y Hecho**.
 
-**Evidencia pendiente de incorporar:** enlace al tablero real y capturas donde se vean los cinco estados, las tareas, responsables y evolución. La plantilla CSV no sustituye al tablero publicado.
+El proyecto de GitHub se encuentra enlazado en:
+
+https://github.com/users/carlosu182/projects/1
+
+La existencia del enlace no acredita por sí sola que todas las tareas, responsables, prioridades y transiciones estén correctamente registrados. Antes de la entrega se debe comprobar el tablero real y conservar capturas que muestren sus estados y actividades.
+
+El archivo `docs/tablero-actividades.csv` sirve como apoyo para organizar tareas, pero no sustituye al tablero publicado.
 
 ## 5. Estrategia de ramas y desarrollo paralelo
 
-La estrategia propuesta es:
-- `main`: versión estable.
-- `develop`: integración de funcionalidades verificadas.
-- `feature/clientes`: cambios del módulo de clientes.
-- `feature/servicios`: cambios del módulo de servicios.
-- `feature/reservas`: cambios del módulo de reservas.
-- `docs/documentacion`: documentación, trazabilidad e informe.
+La estrategia de trabajo contempla:
 
-Las ramas deben crearse y publicarse en el repositorio real. Cada cambio se debe proponer mediante Pull Request hacia la rama de integración, con revisión antes de aceptar la integración. Esta lista describe la estrategia propuesta; no afirma que todas las ramas ya estén publicadas.
+- `main`: rama destinada a la versión estable.
+- `develop`: rama de integración.
+- Ramas de funcionalidad o corrección: desarrollo aislado de cambios.
+- Ramas documentales: actualización de trazabilidad e informes.
 
-## 6. Funcionalidades técnicas implementadas en la adaptación
+Los cambios se proponen mediante Pull Requests para facilitar la revisión y el registro de las integraciones.
 
-La versión adaptada incluye:
-- API para registrar, consultar/buscar y modificar clientes.
+Esta descripción explica el flujo de trabajo. No implica que todas las ramas propuestas estén publicadas ni que la rama estable y su versión final estén verificadas.
+
+## 6. Funcionalidades técnicas implementadas
+
+La adaptación contempla las siguientes funcionalidades:
+
+- API para registrar, consultar, buscar y modificar clientes.
 - API para registrar, consultar y modificar servicios, con precio y duración; también permite activar o desactivar servicios.
-- API para registrar, consultar/buscar y cancelar reservas, vinculadas a un cliente y un servicio, con fecha y hora.
-- Persistencia SQLite y validaciones básicas de datos.
-- Pruebas automatizadas con Node.js Test Runner.
+- API para registrar, consultar, buscar y cancelar reservas vinculadas a clientes y servicios, con fecha y hora.
+- Persistencia en SQLite y validaciones básicas de datos.
+- Pruebas automatizadas mediante Node.js Test Runner.
+- Manejo de solicitudes cuyo cuerpo contiene JSON malformado.
 
-Rutas principales documentadas en `README.md`:
+Rutas principales documentadas en el `README.md`:
+
 - `/api/clientes`
 - `/api/servicios`
 - `/api/reservas`
@@ -81,43 +100,85 @@ Rutas principales documentadas en `README.md`:
 
 ## 7. Pruebas y validación técnica
 
-En el entorno de preparación se ejecutó `npm test`: **20 pruebas aprobadas, 0 fallidas**. Las pruebas cubren salud de API/SQLite, registro y modificación de clientes, validaciones, servicios, registro y consulta de reservas, asociación entre entidades y cancelación.
+### 7.1 Pruebas automatizadas
 
-**Validación en Windows:** se ejecutó `npm.cmd test` en el entorno local del proyecto y se obtuvieron 20 pruebas aprobadas, 0 fallidas, 0 canceladas y 0 omitidas. La evidencia de las pruebas automatizadas está registrada en `docs/evidencias/pruebas-automatizadas.png`.
+En el cierre técnico registrado en la PR #15 se ejecutó `npm test`, con el siguiente resultado:
 
-**Validación manual:** se confirmó en el navegador el registro de clientes, el registro de servicios, el registro de reservas y la cancelación de reservas. Estos resultados están documentados en `docs/validacion-manual-v1.md`. No se afirma que existan capturas individuales de cada flujo.
+| Indicador | Resultado |
+|---|---:|
+| Pruebas aprobadas | 21 |
+| Pruebas fallidas | 0 |
+
+La PR #15 también registra la ejecución de `npm ci` y la ausencia de vulnerabilidades reportadas durante esa instalación. Estos resultados corresponden a las validaciones consignadas en dicha Pull Request.
+
+El archivo `docs/evidencias/pruebas-automatizadas.png` está disponible como evidencia. Antes de entregar, se debe confirmar que la captura refleje la ejecución de 21 pruebas; no debe atribuirse a la imagen un resultado que no muestre.
+
+### 7.2 Manejo de JSON inválido
+
+La PR #15 incorpora un manejador de errores para devolver HTTP 400 con una respuesta JSON cuando una solicitud contiene JSON malformado.
+
+Referencias verificables:
+
+- Pull Request: https://github.com/carlosu182/Proy-Pedidos-Tienda-Tec-Grupo05/pull/15
+- Commit del cambio: `3d6c0b1`
+- Commit de integración en `develop`: `799c2ea`
+
+El cambio incluye una prueba automatizada que comprueba el código HTTP 400 y el mensaje de error en formato JSON.
+
+### 7.3 Validación manual
+
+El documento `docs/validacion-manual-v1.md` registra cuatro flujos confirmados:
+
+1. Registro de un cliente desde la interfaz.
+2. Registro de un servicio.
+3. Creación de una reserva vinculando cliente y servicio.
+4. Cancelación de una reserva.
+
+El registro indica que los resultados fueron confirmados durante la validación manual. No acredita capturas individuales de cada operación ni pruebas adicionales que no se hayan ejecutado.
 
 ## 8. Trabajo colaborativo y responsabilidades
 
-Los integrantes y responsabilidades deben comprobarse usando commits, asignaciones del tablero y Pull Requests. No se deben atribuir tareas, revisiones o aprobaciones a una persona sin evidencia verificable.
+Los integrantes registrados aparecen en la carátula de este informe. Sin embargo, sus responsabilidades y contribuciones deben confirmarse mediante los commits, las asignaciones del tablero y las Pull Requests.
 
-**Evidencias pendientes:** tabla o capturas de tareas asignadas, contribuciones por integrante, commits relevantes y enlaces a PR con revisión auténtica de un compañero.
+No se atribuyen tareas, revisiones ni aprobaciones a una persona sin evidencia verificable.
+
+**Pendientes de verificación:**
+
+- Confirmar las asignaciones y responsabilidades de cada integrante.
+- Comprobar la participación registrada en el tablero.
+- Verificar una revisión auténtica de un integrante distinto del autor en la Pull Request correspondiente.
+- Incorporar enlaces o capturas que acrediten la colaboración.
 
 ## 9. Integración y revisión de cambios
 
-Procedimiento propuesto:
-1. El responsable desarrolla en su rama de funcionalidad.
-2. Ejecuta las pruebas correspondientes.
-3. Abre una Pull Request hacia `develop`.
-4. Otro integrante revisa el cambio y registra observaciones.
-5. El autor corrige lo necesario.
-6. Se integra tras la revisión y la validación.
+La integración de la PR #15 en `develop` está registrada mediante el commit `799c2ea`.
 
-**Evidencia pendiente:** enlace a una Pull Request real que muestre revisión previa a la aceptación. La descripción del procedimiento no sustituye esa evidencia.
+Esta integración acredita el cambio técnico descrito en dicha PR. No sustituye la evidencia de revisión por otro integrante ni demuestra que la liberación final de Agenda Clara V1 esté completada.
+
+Antes de cerrar la entrega se debe verificar en GitHub:
+
+- Que exista una revisión auténtica por otro integrante, cuando la consigna lo requiera.
+- Que la aprobación esté registrada y corresponda al cambio revisado.
+- Que las integraciones declaradas coincidan con el historial de Git.
+- Que la documentación final refleje los estados reales de las Pull Requests.
 
 ## 10. Gestión de conflictos
 
-Se reprodujo un conflicto real de contenido de Git al integrar la rama `evidencia/conflicto-a` en `evidencia/conflicto-b`. Ambas ramas modificaron la misma línea de `docs/prueba-conflicto-git.txt`; Git detuvo la integración automática y requirió una resolución manual.
+El archivo `docs/resolucion-conflictos.md` documenta antecedentes de conflictos de Git y una referencia a un ejercicio controlado sobre `docs/prueba-conflicto-git.txt`.
 
-El conflicto se resolvió integrando los dos objetivos en una única línea. El procedimiento y sus limitaciones están registrados en `docs/resolucion-conflictos.md`. Los commits de preparación, variantes, resolución y documentación se identifican en ese archivo.
+El historial disponible en el clon actual contiene antecedentes de conflictos relacionados con `README.md`, incluidos los commits `5710faa`, `da94043` y `b829d67`.
 
-**Alcance de la evidencia:** el conflicto ocurrió en un archivo de prueba de Git, no en el código funcional de clientes, servicios o reservas. La participación de otro integrante no se considera demostrada sin evidencia adicional.
+La documentación de revisión también menciona los commits `82f49bd`, `685d535`, `2e25c5f`, `75f39c3` y `283520c`. Estos cinco identificadores no aparecen en las ramas disponibles en el clon revisado; por ello, su procedencia permanece pendiente de verificación.
+
+El ejercicio controlado descrito en esa documentación no debe presentarse como un conflicto del código funcional de clientes, servicios o reservas. La participación de otro integrante tampoco se considera demostrada sin evidencia adicional.
 
 ## 11. Gestión de versiones y liberación
 
-La V1 prevista incluye gestión de clientes, servicios y reservas. Se excluyen de esta versión los recordatorios automáticos, reportes, dashboard, pagos en línea e historial ampliado.
+La V1 comprende la gestión de clientes, servicios y reservas. Los recordatorios automáticos, reportes, dashboard, pagos en línea e historial ampliado quedan fuera del alcance mínimo definido.
 
-La versión estable deberá identificarse con un tag Git (por ejemplo, `v1.0.0`) únicamente después de integrar y verificar las funcionalidades. **No se afirma en este informe que la etiqueta o la liberación final ya exista.**
+La integración técnica en `develop` está registrada. Sin embargo, la existencia de una rama estable y de la etiqueta `v1.0.0` debe comprobarse en el repositorio antes de afirmar que la liberación final se ha completado.
+
+No se declara en este informe que la etiqueta `v1.0.0` exista o que la versión estable ya haya sido liberada.
 
 ## 12. Trazabilidad
 
@@ -125,23 +186,32 @@ La correspondencia exigida es:
 
 **Requerimiento → Actividad → Responsable → Desarrollo → Revisión → Integración**
 
-La matriz debe incluir para cada requisito su código, tarea, responsable real, rama/commit o archivo asociado, PR/revisor y evidencia de integración. Los campos que todavía no tengan evidencia deben completarse antes de la entrega.
+La matriz de trazabilidad debe relacionar cada requisito con el código o archivo correspondiente, la actividad asociada, el responsable real, la revisión y la integración.
+
+La matriz actualizada distingue entre la integración técnica confirmada, la evidencia disponible y los puntos pendientes de verificación. Los responsables se mantienen como pendientes de confirmar cuando no existe evidencia suficiente para asignarlos.
 
 ## 13. Lista de verificación final
 
-- [ ] Confirmar nombres, códigos y participación de integrantes.
-- [ ] Publicar las ramas que se hayan acordado para la adaptación.
-- [ ] Crear y compartir el tablero con los cinco estados.
-- [ ] Completar responsables y prioridades de las actividades.
-- [x] Ejecutar las pruebas automatizadas en Windows: 20 aprobadas y 0 fallidas; evidencia en `docs/evidencias/pruebas-automatizadas.png`.
-- [x] Validar manualmente en navegador el registro de clientes, servicios y reservas, y la cancelación de reservas; resultados en `docs/validacion-manual-v1.md`.
-- [ ] Obtener una revisión auténtica de un integrante distinto al autor en el Pull Request.
-- [x] Reproducir, resolver y documentar un conflicto real de contenido de Git; alcance y limitaciones en `docs/resolucion-conflictos.md`.
-- [ ] Integrar y verificar la V1.
-- [ ] Crear el tag de versión estable después de validar.
-- [ ] Incorporar capturas y enlaces reales en el PDF definitivo.
-- [ ] Asegurar asistencia a la sustentación.
+- [ ] Confirmar nombres, códigos y participación de los integrantes.
+- [ ] Verificar el tablero real y sus cinco estados.
+- [ ] Confirmar responsables, prioridades y asignaciones de tareas.
+- [x] Integrar la PR #15 en `develop`; commit `799c2ea`.
+- [x] Incorporar manejo de JSON malformado y su prueba automatizada.
+- [x] Registrar en la PR #15 un resultado de 21 pruebas aprobadas y 0 fallidas.
+- [x] Registrar la validación manual de los cuatro flujos descritos en `docs/validacion-manual-v1.md`.
+- [ ] Confirmar que la captura automatizada corresponde a la ejecución de 21 pruebas.
+- [ ] Verificar una revisión auténtica por otro integrante.
+- [ ] Confirmar la procedencia de los commits citados para el ejercicio controlado de conflicto.
+- [ ] Verificar la rama estable y la etiqueta `v1.0.0`, si corresponde.
+- [ ] Actualizar y revisar el PDF definitivo con enlaces y evidencias reales.
+- [ ] Confirmar los requisitos de asistencia a la sustentación.
 
 ## 14. Conclusiones
 
-La adaptación de Agenda Clara orienta el código a los requerimientos funcionales de clientes, servicios y reservas de la consigna. En el entorno de preparación, las pruebas automatizadas registraron 20 aprobaciones y ninguna falla. Sin embargo, la calificación también depende de evidencias reales de organización, tablero, colaboración, revisión, resolución de conflicto, integración y versión liberada. Por ello, este informe distingue entre lo implementado técnicamente y las evidencias que el equipo debe completar antes de declarar la entrega final.
+La adaptación de Agenda Clara V1 contempla la gestión de clientes, servicios y reservas mediante una aplicación web, una API REST y persistencia SQLite.
+
+El cierre técnico de la PR #15 está registrado en `develop` mediante el commit `799c2ea`. La Pull Request documenta 21 pruebas automatizadas aprobadas y ninguna fallida, además de la incorporación del manejo de JSON malformado.
+
+No obstante, la entrega académica requiere verificar aspectos adicionales de gestión, trazabilidad, colaboración, revisión, evidencias del conflicto y liberación estable. Por ello, este informe distingue entre los cambios técnicos integrados y las evidencias que todavía deben comprobarse.
+
+La entrega se considerará completamente cerrada cuando los pendientes de la lista de verificación hayan sido resueltos y sus resultados estén respaldados por registros verificables.
