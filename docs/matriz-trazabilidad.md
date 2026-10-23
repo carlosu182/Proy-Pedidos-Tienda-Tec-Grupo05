@@ -22,7 +22,7 @@ Relacionar los requerimientos de V1 con actividades, archivos de implementación
 | RF09 | Consultar reservas | Confirmar en tablero | `GET /api/reservas` | Prueba automatizada; confirmar captura manual | Revisión específica pendiente de acreditar | Implementación previa incluida en `develop` |
 | RF10 | Cancelar reservas | Confirmar en tablero | `PATCH /api/reservas/:id/cancelar` | Prueba automatizada; confirmar captura manual | Revisión específica pendiente de acreditar | Implementación previa incluida en `develop` |
 
-La PR #15 y el commit de integración documentado `799c2ea` respaldan el manejo de JSON malformado y las pruebas referidas en ese cambio. Esta evidencia no equivale a una revisión manual específica de cada RF. Los commits de integración particulares de cada requisito deben agregarse cuando se hayan identificado y comprobado.
+La PR #15 se integró mediante el commit `799c2ea` (22/10/2026; autor del commit: Bruno Reyes). Este registro acredita la integración, pero no demuestra por sí solo una aprobación formal de la PR. La PR #18 sí cuenta con aprobación formal documentada de Carlos y fue integrada en `develop` mediante `083b616`. Los commits identificados para la implementación son `3c69a2d` (Bruno Reyes: API REST de clientes y productos) y `6c4fc63` (Carlos Rivera: incorporación del proyecto con los módulos de clientes, servicios y reservas). Para servicios y reservas, el historial consultado identifica el commit de incorporación, pero no permite atribuir con certeza la autoría original de cada requisito RF.
 
 ## 3. Fuera del alcance V1
 - RF11: recordatorios automáticos.
@@ -36,8 +36,8 @@ Se mantienen como backlog V2, conforme a la documentación actual del proyecto.
 ## 4. Evidencias y estado de verificación
 
 - **Pruebas automatizadas:** 21 aprobadas, 0 fallidas. Evidencia disponible en `docs/evidencias/pruebas-automatizadas.txt`.
-- **Integración y revisión:** la PR #18 fue aprobada formalmente por Carlos Fernando Rivera Hipolito, quien dejó un comentario de revisión, e integrada en `develop` mediante el commit `083b616`. El registro de revisión y la conversación de la PR respaldan esta evidencia.
-- **Conflicto Git:** existen las ramas `docs/conflicto-bruno` y `docs/conflicto-carlos`. El commit `4314e23` registra la resolución en `docs/prueba-conflicto-v1.txt`, cuyo contenido indica: “Estado: Validado por Carlos y Bruno”.
+- **Integración y revisión:** la PR #18 fue aprobada formalmente por Carlos Fernando Rivera Hipolito y se integró en `develop` mediante `083b616`. La PR #15 se integró mediante `799c2ea`; la evidencia revisada hasta ahora no confirma una aprobación formal de esa PR.
+- **Conflicto Git:** se identificaron las ramas `docs/conflicto-base`, `docs/conflicto-bruno` y `docs/conflicto-carlos`, además del commit `4314e23`, cuyo archivo `docs/prueba-conflicto-v1.txt` contiene el texto "Estado: Validado por Carlos y Bruno". Esta evidencia muestra variantes y un commit de resolución, pero todavía debe comprobarse el registro del conflicto efectivo y cómo se resolvió.
 - **Liberación:** la etiqueta `v1.0.0` apunta al commit `083b616`; la Release de Agenda Clara V1.0.0 está publicada en GitHub.
 - **Tablero:** el equipo confirma que están presentes los cinco estados requeridos. Deben mantenerse actualizados los responsables y el estado real de cada actividad.
 - **Trazabilidad individual:** la atribución de RF01–RF10 a responsables y revisiones específicas debe conservarse como pendiente hasta verificar los commits y registros correspondientes.
@@ -55,6 +55,6 @@ La matriz relaciona los requisitos funcionales con las actividades y archivos t�
 Integrantes actuales declarados por el equipo:
 
 - Carlos Fernando Rivera Hipolito — U23216154: [commit b6179e7](https://github.com/carlosu182/Proy-Pedidos-Tienda-Tec-Grupo05/commit/b6179e74f56f43ff73a88d1bd7c58e7cf2f9d5cd), documentación de evidencias de participación; merge relacionado [8af4fa7](https://github.com/carlosu182/Proy-Pedidos-Tienda-Tec-Grupo05/commit/8af4fa713878cd2913699931712fe90c2edf3155).
-- Bruno Santiago Reyes Vicente — U19221035: autor de la [PR #18](https://github.com/carlosu182/Proy-Pedidos-Tienda-Tec-Grupo05/pull/18), sobre el cierre documental de Agenda Clara V1. La PR fue integrada en `develop` mediante el commit `083b616`. La integración está verificada; no se debe afirmar una revisión individual formal sin comprobar el registro correspondiente.
+- Bruno Santiago Reyes Vicente — U19221035: autor de la [PR #18](https://github.com/carlosu182/Proy-Pedidos-Tienda-Tec-Grupo05/pull/18), sobre el cierre documental de Agenda Clara V1. La PR fue aprobada formalmente por Carlos e integrada en `develop` mediante `083b616`. También figura como autor del commit `3c69a2d`, que implementa operaciones REST para clientes y productos.
 
-Estas entradas son registros puntuales y no acreditan por sí mismas toda la responsabilidad funcional. Mantener pendiente la atribución RF01–RF10 hasta cotejar cada commit de implementación con su autor real. No inferir revisiones ni aprobaciones a partir de un merge.
+Estas entradas acreditan contribuciones puntuales, pero no toda la responsabilidad funcional. Mantener pendiente la atribución individual de RF01–RF10 cuando no exista evidencia específica. La aprobación de la PR #18 está respaldada por su registro formal de revisión; para otras PR, no inferir revisiones ni aprobaciones únicamente a partir de un merge.
