@@ -53,9 +53,6 @@ La estrategia propuesta está documentada en `docs/estrategia-ramas.md`. Activid
 
 ## Integrantes registrados en el trabajo previo
 
-- Eduardo Jesús Jara Moya — U21302190
-- Lisbert Wiliams Galvan Zamudio — U22217814
-- Nery Emerson Velasquez Pacheco — U23272063
 - Carlos Fernando Rivera Hipolito — U23216154
 - Bruno Santiago Reyes Vicente — U19221035
 
