@@ -25,3 +25,14 @@ Coordinar una modificación inocua del mismo archivo en dos ramas separadas con 
 
 ## 6. Criterio de cierre
 Cerrar el requisito cuando los links de los dos cambios, la salida del conflicto y el commit de resolución estén disponibles y se puedan atribuir realmente a los dos integrantes del equipo.
+
+## 7. Evidencia verificada en el repositorio
+
+Archivo en conflicto: `docs/prueba-conflicto-v1.txt`.
+
+- Rama base: `docs/conflicto-base`, commit `fd383e7`.
+- Variante de Bruno: rama `docs/conflicto-bruno`, commit `b9997c1`. El archivo indica `Estado: Validado por Bruno`.
+- Variante de Carlos: rama `docs/conflicto-carlos`, commit `0fe5753`. El archivo indica `Estado: Validado por Carlos`.
+- Resolución: commit de fusión `4314e23`, realizado por Carlos Rivera. El archivo resultante indica `Estado: Validado por Carlos y Bruno`.
+
+Los padres del commit de fusión y el contenido de las tres versiones permiten verificar las variantes y el resultado integrado. No se conserva en esta evidencia la salida de terminal `CONFLICT (content)` del momento de la operación; por tanto, no se reproduce ni se afirma disponer de esa captura histórica.
