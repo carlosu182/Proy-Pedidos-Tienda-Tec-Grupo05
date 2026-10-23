@@ -13,16 +13,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Eduardo-Jara03/Proyecto-pedidos-tiendatecnologia-grupo05.git"
+    "url": "https://github.com/carlosu182/Proy-Pedidos-Tienda-Tec-Grupo05.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/Eduardo-Jara03/Proyecto-pedidos-tiendatecnologia-grupo05/issues"
+    "url": "https://github.com/carlosu182/Proy-Pedidos-Tienda-Tec-Grupo05/issues"
   },
-  "homepage": "https://github.com/Eduardo-Jara03/Proyecto-pedidos-tiendatecnologia-grupo05#readme",
+  "homepage": "https://github.com/carlosu182/Proy-Pedidos-Tienda-Tec-Grupo05#readme",
   "dependencies": {
     "better-sqlite3": "^13.0.3",
     "express": "^5.3.0"

@@ -12,6 +12,20 @@ const PORT = Number(process.env.PORT) || 3000;
 app.disable("x-powered-by");
 app.use(express.json({ limit: "100kb" }));
 
+// Devuelve un error legible cuando el cuerpo de una petición contiene JSON malformado.
+app.use((error, req, res, next) => {
+    const esJsonInvalido =
+        error instanceof SyntaxError &&
+        error.status === 400 &&
+        Object.prototype.hasOwnProperty.call(error, "body");
+
+    if (esJsonInvalido) {
+        return res.status(400).json({ error: "El cuerpo de la solicitud contiene JSON inválido" });
+    }
+
+    return next(error);
+});
+
 app.use("/api/clientes", clientesRoutes);
 app.use("/api/servicios", serviciosRoutes);
 app.use("/api/reservas", reservasRoutes);
