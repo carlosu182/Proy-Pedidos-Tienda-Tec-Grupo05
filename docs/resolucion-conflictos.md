@@ -1,48 +1,27 @@
 # Gestión de conflictos — Agenda Clara
 
 ## 1. Objetivo
+Registrar de forma reproducible el conflicto, su causa y resolución, separando evidencias del repositorio actual de antecedentes históricos.
 
-Documentar los conflictos de Git identificados durante el desarrollo y la preparación de la entrega, indicando su alcance y las limitaciones de la evidencia disponible.
+## 2. Antecedentes históricos
+La documentación previa menciona commits relacionados con conflictos de README (`5710faa`, `da94043`, `b829d67`) y un ejercicio controlado con los identificadores `82f49bd`, `685d535`, `2e25c5f`, `75f39c3`, `283520c`.
 
-## 2. Antecedentes de conflictos en el repositorio
+Estos últimos se han descrito como un ejercicio sobre cambios incompatibles en una misma línea. No se deben considerar evidencia de participación de los dos integrantes de Agenda Clara hasta verificar repositorio de origen, autoría, fechas, padres y contenido.
 
-El historial disponible incluye antecedentes de resolución de conflictos relacionados con el archivo `README.md`, entre ellos:
+## 3. Evidencia requerida para el cierre académico
+Para demostrar un conflicto causado por trabajo simultáneo, el equipo debe conservar:
+1. Dos ramas con cambios incompatibles en la misma región de un archivo.
+2. Identificación de las ramas y del archivo conflictivo.
+3. Salida real de Git donde aparezca `CONFLICT (content)`.
+4. Resolución manual, validación del archivo resultante y commit de resolución.
+5. Registro de qué integrante hizo cada cambio, verificable en GitHub.
+6. Captura auténtica o enlaces a los commits y PR.
 
-- `5710faa`: `merge: resolver conflictos entre develop y main` — verificar el mensaje y el contexto exacto del commit antes de atribuirle un conflicto específico.
-- `da94043`: `merge: resolver conflicto en README al integrar feature/pedidos`.
-- `b829d67`: `docs: agregar conflicto 3 resuelto al integrar develop en main`.
+## 4. Limitación actual
+La documentación histórica no demuestra por sí sola que ambos integrantes hayan intervenido simultáneamente en el conflicto del repositorio actual. No se inventa un log de terminal ni se atribuyen commits a una persona no verificada.
 
-Estos antecedentes pertenecen al historial Git disponible. Para describir con precisión cada conflicto, debe consultarse el contenido del commit y sus padres.
-
-## 3. Ejercicio controlado documentado
-
-Una versión documental presentada en la rama de revisión `docs/evidencias-conflicto` describe un ejercicio controlado en `docs/prueba-conflicto-git.txt`.
-
-Según ese documento, las ramas `evidencia/conflicto-a` y `evidencia/conflicto-b` modificaron la misma línea y requirieron una resolución manual.
-
-La documentación de esa rama identifica los siguientes commits:
-
-- Preparación: `82f49bd`.
-- Primera variante: `685d535`.
-- Segunda variante: `2e25c5f`.
-- Resolución: `75f39c3`.
-- Documentación: `283520c`.
-
-**Limitación de verificación:** estos cinco identificadores no aparecen en el historial de las ramas disponibles en el clon revisado. Por tanto, se conservan como referencias declaradas por la documentación de revisión, pero no se consideran verificados en el historial actual.
-
-## 4. Alcance de la evidencia
-
-Los antecedentes descritos no deben presentarse como conflictos del código funcional de clientes, servicios o reservas sin evidencia que lo demuestre.
-
-Tampoco se atribuyen revisiones, aprobaciones o contribuciones a integrantes sin registros verificables.
-
-## 5. Verificaciones pendientes
-
-- Confirmar el repositorio de origen de los cinco commits del ejercicio controlado.
-- Verificar los commits y sus relaciones de parentesco en el repositorio correspondiente.
-- Incorporar enlaces verificables o capturas de la reproducción y resolución.
-- Confirmar si el ejercicio controlado debe mantenerse como evidencia histórica o si se reproducirá en el repositorio actual.
+## 5. Pasos recomendados
+Coordinar una modificación inocua del mismo archivo en dos ramas separadas con ambos integrantes, intentar integrar una rama en la otra, capturar el conflicto real, resolverlo manteniendo el contenido válido y registrar el commit final. No realizar este ejercicio sobre archivos de datos o código sensible para la ejecución.
 
 ## 6. Criterio de cierre
-
-La documentación de conflictos se considerará suficientemente respaldada cuando las referencias puedan verificarse en el repositorio de origen y se identifique con claridad qué evidencia pertenece al repositorio actual y cuál corresponde a antecedentes históricos.
+Cerrar el requisito cuando los links de los dos cambios, la salida del conflicto y el commit de resolución estén disponibles y se puedan atribuir realmente a los dos integrantes del equipo.
