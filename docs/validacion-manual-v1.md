@@ -47,15 +47,25 @@ Tablero: https://github.com/users/carlosu182/projects/1
 Las columnas declaradas son Pendiente, Seleccionado, En progreso, En revisión y Hecho. Verificar que cada tarea esté en el estado real, con responsable correcto y criterio de aceptación completado. La tabla CSV es apoyo, no sustituye al proyecto publicado.
 
 ## 5. Revisión por pares
-La PR #18 está abierta y apunta a `develop`. A la última comprobación no tenía revisiones formales registradas. La tarea solo quedará demostrada cuando el segundo integrante revise los archivos y registre su decisión desde su propia cuenta.
+
+La PR #18 fue integrada en `develop` mediante el commit `083b616`.
 
 PR: https://github.com/carlosu182/Proy-Pedidos-Tienda-Tec-Grupo05/pull/18
 
+La integración está verificada. La existencia de una revisión formal por parte de otro integrante debe confirmarse mediante el registro de revisiones de GitHub; no se infiere únicamente a partir del merge.
+
 ## 6. Conflicto Git
-La documentación cita antecedentes históricos y un ejercicio controlado de conflicto. No se debe afirmar que un conflicto entre los dos integrantes está acreditado hasta verificar los commits de origen o reproducir el conflicto en este repositorio conservando ramas, salida, resolución y commit. La documentación por sí sola no prueba trabajo simultáneo de ambos integrantes.
+
+El repositorio conserva ramas relacionadas con el ejercicio de conflicto, entre ellas `docs/conflicto-bruno` y `docs/conflicto-carlos`. El commit `4314e23` registra una resolución en `docs/prueba-conflicto-v1.txt`, cuyo contenido indica: “Estado: Validado por Carlos y Bruno”.
+
+Estos registros respaldan la existencia de un ejercicio de resolución. Por sí solos, no demuestran completamente que ambos integrantes trabajaran simultáneamente ni sustituyen la evidencia de las ramas de origen y del proceso de resolución.
 
 ## 7. Versión estable
-La consulta de GitHub no encontró una GitHub Release publicada. Confirmar la rama/tag solicitados por la consigna. La versión estable solo se declarará después de la revisión auténtica y de completar las verificaciones requeridas. No afirmar que `v1.0.0` ya existe hasta comprobarlo.
+
+La versión `v1.0.0` está publicada en GitHub. La etiqueta `v1.0.0` apunta al commit `083b616`, que también corresponde a la integración verificada en `develop` y a la versión alineada en `main`.
+
+Las pruebas automatizadas registradas indican 21 pruebas aprobadas y 0 fallidas. La verificación de las capturas individuales de las pruebas manuales permanece pendiente.
 
 ## 8. Criterio de cierre
-La entrega puede declararse cerrada cuando la PR documental se haya revisado e integrado, los responsables reales estén consignados, el tablero y la matriz correspondan con GitHub, se tenga evidencia auténtica del conflicto y se confirme la liberación exigida.
+
+La versión estable está publicada y la PR documental fue integrada. Para completar la evidencia de la entrega, queda comprobar el registro de revisión formal, verificar las capturas de las pruebas manuales y asegurar que la matriz de trazabilidad refleje las responsabilidades reales y la evidencia disponible del conflicto Git.

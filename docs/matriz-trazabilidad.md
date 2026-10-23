@@ -33,17 +33,21 @@ La PR #15 y el commit de integración documentado `799c2ea` respaldan el manejo 
 
 Se mantienen como backlog V2, conforme a la documentación actual del proyecto.
 
-## 4. Evidencias y pendientes
-- Pruebas automatizadas: se reportaron 21 tests, 21 aprobados y 0 fallidos. Ver `docs/evidencias/pruebas-automatizadas.txt`.
-- Capturas manuales: el equipo indica que ya están en el informe. Mantenerlas enlazadas o adjuntarlas en el repositorio para trazabilidad reproducible.
-- Revisión por pares: pendiente de una revisión auténtica en PR #18.
-- Conflicto Git: verificar las referencias históricas o reproducir conflicto real con participación trazable de ambos integrantes.
-- Liberación: confirmar tag y release después de cerrar los pendientes.
+## 4. Evidencias y estado de verificación
 
-## 5. Flujo requerido
-**Requerimiento → Actividad → Responsable → Desarrollo → Revisión → Integración.**
+- **Pruebas automatizadas:** 21 aprobadas, 0 fallidas. Evidencia disponible en `docs/evidencias/pruebas-automatizadas.txt`.
+- **Integración:** la PR #18 fue integrada en `develop` mediante el commit `083b616`. La aprobación formal individual debe verificarse en el registro de revisiones de GitHub.
+- **Conflicto Git:** existen las ramas `docs/conflicto-bruno` y `docs/conflicto-carlos`. El commit `4314e23` registra la resolución en `docs/prueba-conflicto-v1.txt`, cuyo contenido indica: “Estado: Validado por Carlos y Bruno”.
+- **Liberación:** la etiqueta `v1.0.0` apunta al commit `083b616`; la Release de Agenda Clara V1.0.0 está publicada en GitHub.
+- **Tablero:** el equipo confirma que están presentes los cinco estados requeridos. Deben mantenerse actualizados los responsables y el estado real de cada actividad.
+- **Trazabilidad individual:** la atribución de RF01–RF10 a responsables y revisiones específicas debe conservarse como pendiente hasta verificar los commits y registros correspondientes.
+- **Pruebas manuales:** el informe contiene la documentación de los flujos comunicados por el equipo. La disponibilidad de capturas individuales debe comprobarse antes de afirmar que cada flujo tiene evidencia independiente.
 
-Para cada requisito, registrar en GitHub el responsable real, issue/actividad, rama o commit de desarrollo, PR/revisor real y commit de integración. No atribuir revisiones ni actividades retrospectivamente si no aparecen respaldadas por registros.
+## 5. Flujo de trazabilidad requerido
+
+**Requerimiento → Actividad → Responsable → Desarrollo → Revisión → Integración**
+
+La matriz relaciona los requisitos funcionales con las actividades y archivos técnicos. La atribución individual de cada requisito debe respaldarse con registros verificables del repositorio y del tablero; no debe inferirse únicamente a partir de la integración global.
 
 
 ## Responsables y evidencia individual
@@ -51,6 +55,6 @@ Para cada requisito, registrar en GitHub el responsable real, issue/actividad, r
 Integrantes actuales declarados por el equipo:
 
 - Carlos Fernando Rivera Hipolito — U23216154: [commit b6179e7](https://github.com/carlosu182/Proy-Pedidos-Tienda-Tec-Grupo05/commit/b6179e74f56f43ff73a88d1bd7c58e7cf2f9d5cd), documentación de evidencias de participación; merge relacionado [8af4fa7](https://github.com/carlosu182/Proy-Pedidos-Tienda-Tec-Grupo05/commit/8af4fa713878cd2913699931712fe90c2edf3155).
-- Bruno Santiago Reyes Vicente — U19221035: autor de la [PR #18](https://github.com/carlosu182/Proy-Pedidos-Tienda-Tec-Grupo05/pull/18), sobre el cierre documental de Agenda Clara V1. La PR está abierta y sin revisión formal registrada en la consulta actual.
+- Bruno Santiago Reyes Vicente — U19221035: autor de la [PR #18](https://github.com/carlosu182/Proy-Pedidos-Tienda-Tec-Grupo05/pull/18), sobre el cierre documental de Agenda Clara V1. La PR fue integrada en `develop` mediante el commit `083b616`. La integración está verificada; no se debe afirmar una revisión individual formal sin comprobar el registro correspondiente.
 
 Estas entradas son registros puntuales y no acreditan por sí mismas toda la responsabilidad funcional. Mantener pendiente la atribución RF01–RF10 hasta cotejar cada commit de implementación con su autor real. No inferir revisiones ni aprobaciones a partir de un merge.
