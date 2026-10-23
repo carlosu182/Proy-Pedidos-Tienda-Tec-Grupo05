@@ -48,11 +48,11 @@ Las columnas declaradas son Pendiente, Seleccionado, En progreso, En revisión y
 
 ## 5. Revisión por pares
 
-La PR #18 fue integrada en `develop` mediante el commit `083b616`.
+La PR #18 fue revisada y aprobada formalmente por Carlos Fernando Rivera Hipolito, quien dejó un comentario explícito de aprobación antes de integrar los cambios.
 
 PR: https://github.com/carlosu182/Proy-Pedidos-Tienda-Tec-Grupo05/pull/18
 
-La integración está verificada. La existencia de una revisión formal por parte de otro integrante debe confirmarse mediante el registro de revisiones de GitHub; no se infiere únicamente a partir del merge.
+La PR se integró en develop mediante el commit 083b616. El registro de aprobación acredita la revisión por pares y la integración de los cambios documentales.
 
 ## 6. Conflicto Git
 

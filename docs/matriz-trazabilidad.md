@@ -36,7 +36,7 @@ Se mantienen como backlog V2, conforme a la documentación actual del proyecto.
 ## 4. Evidencias y estado de verificación
 
 - **Pruebas automatizadas:** 21 aprobadas, 0 fallidas. Evidencia disponible en `docs/evidencias/pruebas-automatizadas.txt`.
-- **Integración:** la PR #18 fue integrada en `develop` mediante el commit `083b616`. La aprobación formal individual debe verificarse en el registro de revisiones de GitHub.
+- **Integración y revisión:** la PR #18 fue aprobada formalmente por Carlos Fernando Rivera Hipolito, quien dejó un comentario de revisión, e integrada en `develop` mediante el commit `083b616`. El registro de revisión y la conversación de la PR respaldan esta evidencia.
 - **Conflicto Git:** existen las ramas `docs/conflicto-bruno` y `docs/conflicto-carlos`. El commit `4314e23` registra la resolución en `docs/prueba-conflicto-v1.txt`, cuyo contenido indica: “Estado: Validado por Carlos y Bruno”.
 - **Liberación:** la etiqueta `v1.0.0` apunta al commit `083b616`; la Release de Agenda Clara V1.0.0 está publicada en GitHub.
 - **Tablero:** el equipo confirma que están presentes los cinco estados requeridos. Deben mantenerse actualizados los responsables y el estado real de cada actividad.
