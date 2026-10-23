@@ -1,92 +1,61 @@
 # Validación manual y cierre técnico — Agenda Clara V1
 
 ## 1. Propósito
+Consolidar resultados técnicos informados, las pruebas manuales y los pendientes de evidencia. No se marcarán como aprobadas pruebas no ejecutadas o sin evidencia suficiente.
 
-Registrar los resultados técnicos disponibles y las verificaciones necesarias antes de la entrega académica. Este documento separa los resultados de pruebas comunicados y los flujos documentados de las actividades que todavía deben repetirse y demostrarse con evidencia real.
+## 2. Validación automatizada
+La transcripción de `npm test` compartida desde Windows registra:
+- Tests reportados: 21
+- Aprobados: 21
+- Fallidos: 0
+- Cancelados: 0
+- Omitidos: 0
+- Duración aproximada en esa ejecución: 543 ms.
 
-## 2. Pruebas automatizadas
+Ver: [evidencias/pruebas-automatizadas.txt](evidencias/pruebas-automatizadas.txt) y [evidencias/ejecucion-npm-test.txt](evidencias/ejecucion-npm-test.txt). La transcripción es textual; no equivale a una captura de pantalla.
 
-### Resultado reportado
-
-| Indicador | Resultado |
-|---|---:|
-| Comando | `npm test` |
-| Tests reportados por Node.js Test Runner | 21 |
-| Aprobados | 21 |
-| Fallidos | 0 |
-| Cancelados | 0 |
-| Omitidos | 0 |
-| Pendientes | 0 |
-| Duración local compartida | Aproximadamente 556 ms |
-
-El total reportado por el ejecutor incluye suites contenedoras; no debe interpretarse necesariamente como 21 casos de prueba individuales diferentes.
-
-**Archivo disponible:** [`docs/evidencias/pruebas-automatizadas.txt`](evidencias/pruebas-automatizadas.txt). El `.txt` es un resumen escrito de los resultados, no una captura de pantalla de la terminal. Si el profesor exige captura, debe incorporarse una imagen auténtica tomada durante una nueva ejecución en Windows.
-
-### Comando para repetir la ejecución
-
-Desde la raíz del repositorio:
-
+Comandos para repetir en el entorno final:
 ```powershell
 npm ci
 npm test
+npm audit
 ```
 
-Guardar la salida real y, si se solicita, realizar una captura de pantalla donde se vean el comando y el resumen final.
-
 ## 3. Validación manual
+El equipo comunicó haber probado los flujos básicos en la interfaz. En el documento previo se registraron:
+1. Registro de clientes.
+2. Registro de servicios.
+3. Creación de reserva asociada con cliente y servicio.
+4. Cancelación de reservas.
 
-El documento previo registra estos cuatro flujos como confirmados durante una comprobación anterior:
+La evidencia individual por flujo debe ser la captura auténtica que el equipo ya tomó e incluyó en el informe. Si esas capturas no están guardadas en el repositorio, hay que agregarlas para que queden accesibles junto al código. No se declaran aquí rutas de imágenes que no hayan sido verificadas.
 
-1. Registro de un cliente desde la interfaz.
-2. Registro de un servicio.
-3. Creación de una reserva asociando cliente y servicio.
-4. Cancelación de una reserva.
+| ID | Verificación | Estado documental |
+|---|---|---|
+| VM-01 | API y base de datos en `/api/health` | Resultado comunicado; guardar captura en repo si la consigna la pide |
+| VM-02 | Registrar y consultar clientes | Resultado comunicado; comprobar captura |
+| VM-03 | Modificar cliente | Repetir/confirmar evidencia |
+| VM-04 | Registrar y consultar servicio con precio y duración | Resultado comunicado; comprobar captura |
+| VM-05 | Crear reserva con cliente, servicio, fecha y hora | Resultado comunicado; comprobar captura |
+| VM-06 | Consultar reserva | Repetir/confirmar evidencia |
+| VM-07 | Cancelar reserva | Resultado comunicado; comprobar captura |
+| VM-08 | JSON malformado devuelve HTTP 400 en JSON | Existe prueba automatizada; conservar salida/captura si se exige |
 
-No se localizaron capturas individuales de esos flujos. Repetir la validación después de integrar los últimos cambios y rellenar esta tabla únicamente con resultados observados:
-
-| ID | Prueba a ejecutar | Resultado observado | Evidencia |
-|---|---|---|---|
-| VM-01 | Iniciar la aplicación y consultar `/api/health` | Por ejecutar | Captura real |
-| VM-02 | Registrar y consultar un cliente | Por ejecutar | Captura real |
-| VM-03 | Modificar un cliente | Por ejecutar | Captura real |
-| VM-04 | Registrar y consultar un servicio con precio y duración | Por ejecutar | Captura real |
-| VM-05 | Crear una reserva con cliente, servicio, fecha y hora | Por ejecutar | Captura real |
-| VM-06 | Consultar una reserva | Por ejecutar | Captura real |
-| VM-07 | Cancelar una reserva | Por ejecutar | Captura real |
-| VM-08 | Enviar JSON malformado a un endpoint y comprobar HTTP 400 con JSON | Por ejecutar en la verificación final | Captura real de consola/cliente HTTP |
-
-No marcar las pruebas como aprobadas hasta ejecutarlas en la versión integrada. Las capturas deben ser auténticas, sin reconstrucciones.
-
-## 4. Gestión del tablero
-
-El tablero mostrado por el equipo presenta las columnas Pendiente, Seleccionado, En progreso, En revisión y Hecho. Esta captura evidencia las columnas y las tarjetas visibles, pero no confirma automáticamente que las tareas estén asignadas correctamente ni que su criterio de aceptación se haya completado.
-
-Antes de entregar:
-- Confirmar que cada actividad está asignada a la persona que realmente la ejecuta.
-- Revisar las tareas #8 «Revisar cambios mediante Pull Request», #9 «Validar y liberar Agenda Clara V1», #10 «Completar trazabilidad de requisitos» y #11 «Actualizar informe final y PDF».
-- Mover una tarea a «Hecho» únicamente cuando se haya completado y exista evidencia.
-- Guardar una captura legible del tablero y otra del detalle de responsables, cuando corresponda.
-
+## 4. Tablero colaborativo
 Tablero: https://github.com/users/carlosu182/projects/1
 
+Las columnas declaradas son Pendiente, Seleccionado, En progreso, En revisión y Hecho. Verificar que cada tarea esté en el estado real, con responsable correcto y criterio de aceptación completado. La tabla CSV es apoyo, no sustituye al proyecto publicado.
+
 ## 5. Revisión por pares
+La PR #18 está abierta y apunta a `develop`. A la última comprobación no tenía revisiones formales registradas. La tarea solo quedará demostrada cuando el segundo integrante revise los archivos y registre su decisión desde su propia cuenta.
 
-La tarea #8 describe como criterio de cierre una revisión auténtica por otro integrante. Los registros consultados de las PR #15, #16 y #17 no muestran revisiones formales, y la tarea #8 fue cerrada sin comentarios.
-
-Por tanto, la revisión por pares permanece pendiente de acreditar. Un integrante que no sea autor de los cambios debe revisar una PR apropiada, registrar observaciones reales y emitir la aprobación si corresponde. No se debe inventar una revisión ni cerrar esta actividad hasta que el registro exista.
+PR: https://github.com/carlosu182/Proy-Pedidos-Tienda-Tec-Grupo05/pull/18
 
 ## 6. Conflicto Git
+La documentación cita antecedentes históricos y un ejercicio controlado de conflicto. No se debe afirmar que un conflicto entre los dos integrantes está acreditado hasta verificar los commits de origen o reproducir el conflicto en este repositorio conservando ramas, salida, resolución y commit. La documentación por sí sola no prueba trabajo simultáneo de ambos integrantes.
 
-El documento `docs/resolucion-conflictos.md` cita commits históricos cuya procedencia no quedó verificada en las ramas revisadas. Antes de la entrega:
-- Comprobarlos en el repositorio de origen; o reproducir un conflicto real entre ramas en este repositorio.
-- Conservar la salida del conflicto, la resolución y el commit final.
-- Guardar una captura auténtica y documentar las ramas, archivo afectado y participantes reales.
+## 7. Versión estable
+La consulta de GitHub no encontró una GitHub Release publicada. Confirmar la rama/tag solicitados por la consigna. La versión estable solo se declarará después de la revisión auténtica y de completar las verificaciones requeridas. No afirmar que `v1.0.0` ya existe hasta comprobarlo.
 
-## 7. Liberación de versión
-
-No se confirmó una etiqueta `v1.0.0` ni una GitHub Release en la auditoría previa. Confirmar si la consigna exige ambas. Si corresponde, crearlas únicamente después de completar las pruebas, la revisión y la comprobación manual.
-
-## 8. Criterio final
-
-La entrega estará lista cuando las pruebas se hayan repetido, el tablero y los responsables estén verificados, exista revisión auténtica por pares, el conflicto esté respaldado, la liberación requerida pueda consultarse y las evidencias reales se hayan incorporado al PDF.
+## 8. Criterio de cierre
+La entrega puede declararse cerrada cuando la PR documental se haya revisado e integrado, los responsables reales estén consignados, el tablero y la matriz correspondan con GitHub, se tenga evidencia auténtica del conflicto y se confirme la liberación exigida.

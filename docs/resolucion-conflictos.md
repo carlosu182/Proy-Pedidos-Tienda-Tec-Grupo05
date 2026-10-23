@@ -1,31 +1,27 @@
-# Gestión de conflictos Git — Agenda Clara V1
+# Gestión de conflictos — Agenda Clara
 
-## Estado de la evidencia
+## 1. Objetivo
+Registrar de forma reproducible el conflicto, su causa y resolución, separando evidencias del repositorio actual de antecedentes históricos.
 
-La documentación previa menciona antecedentes de conflictos de `README.md` y un ejercicio controlado en `docs/prueba-conflicto-git.txt`. Los siguientes identificadores aparecen en los documentos, pero no se verificaron en las ramas consultadas del repositorio actual:
+## 2. Antecedentes históricos
+La documentación previa menciona commits relacionados con conflictos de README (`5710faa`, `da94043`, `b829d67`) y un ejercicio controlado con los identificadores `82f49bd`, `685d535`, `2e25c5f`, `75f39c3`, `283520c`.
 
-- Preparación: `82f49bd`
-- Primera variante: `685d535`
-- Segunda variante: `2e25c5f`
-- Resolución: `75f39c3`
-- Documentación: `283520c`
+Estos últimos se han descrito como un ejercicio sobre cambios incompatibles en una misma línea. No se deben considerar evidencia de participación de los dos integrantes de Agenda Clara hasta verificar repositorio de origen, autoría, fechas, padres y contenido.
 
-Por tanto, no se afirma que estos cinco commits estén presentes en el historial actual ni que el ejercicio esté acreditado definitivamente.
+## 3. Evidencia requerida para el cierre académico
+Para demostrar un conflicto causado por trabajo simultáneo, el equipo debe conservar:
+1. Dos ramas con cambios incompatibles en la misma región de un archivo.
+2. Identificación de las ramas y del archivo conflictivo.
+3. Salida real de Git donde aparezca `CONFLICT (content)`.
+4. Resolución manual, validación del archivo resultante y commit de resolución.
+5. Registro de qué integrante hizo cada cambio, verificable en GitHub.
+6. Captura auténtica o enlaces a los commits y PR.
 
-## Procedimiento para cerrar el requisito
+## 4. Limitación actual
+La documentación histórica no demuestra por sí sola que ambos integrantes hayan intervenido simultáneamente en el conflicto del repositorio actual. No se inventa un log de terminal ni se atribuyen commits a una persona no verificada.
 
-Opción A — verificar evidencia histórica:
-1. Localizar el repositorio donde se generaron los commits.
-2. Abrir cada commit y comprobar autor, fecha, archivo modificado y relación con el conflicto.
-3. Añadir enlaces verificables al informe.
+## 5. Pasos recomendados
+Coordinar una modificación inocua del mismo archivo en dos ramas separadas con ambos integrantes, intentar integrar una rama en la otra, capturar el conflicto real, resolverlo manteniendo el contenido válido y registrar el commit final. No realizar este ejercicio sobre archivos de datos o código sensible para la ejecución.
 
-Opción B — reproducir un conflicto real en el repositorio actual:
-1. Crear una rama base de evidencia a partir de `develop`.
-2. Crear dos ramas derivadas de esa base.
-3. Modificar la misma línea del mismo archivo de evidencia con textos incompatibles en cada rama y confirmar ambos cambios.
-4. Intentar integrar una rama en la otra y conservar la salida real de Git con el conflicto.
-5. Resolver manualmente el archivo, retirar los marcadores `<<<<<<<`, `=======`, `>>>>>>>`, comprobar el contenido y crear el commit de resolución.
-6. Verificar el historial y guardar capturas de la creación del conflicto y de la resolución.
-7. Registrar las ramas, el archivo afectado, el criterio de resolución, el commit final y quién participó realmente.
-
-No crear capturas simuladas ni declarar la revisión de otra persona si esa participación no ocurrió.
+## 6. Criterio de cierre
+Cerrar el requisito cuando los links de los dos cambios, la salida del conflicto y el commit de resolución estén disponibles y se puedan atribuir realmente a los dos integrantes del equipo.

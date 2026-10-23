@@ -1,50 +1,29 @@
 # Revisión técnica previa a la integración — Agenda Clara V1
 
-## Alcance revisado
+## Alcance
+Revisión estática de los archivos principales de la aplicación y de la documentación de cierre. Este documento no sustituye la revisión formal de la Pull Request por el segundo integrante.
 
-Se inspeccionaron los siguientes archivos de `develop`:
+## Hallazgos observados
+- La aplicación monta Express, rutas de clientes, servicios y reservas, `/api/health` y el frontend estático.
+- El proyecto utiliza Node.js Test Runner mediante `npm test`.
+- La evidencia de ejecución publicada registra 21 tests, 21 aprobados y 0 fallidos.
+- La auditoría local compartida registra `npm audit`: 0 vulnerabilidades.
+- La documentación separa la funcionalidad V1 de las mejoras propuestas para V2.
 
-- `server/app.js`
-- `server/routes/clientes.js`
-- `server/routes/servicios.js`
-- `server/routes/reservas.js`
-- `package.json`
-- `README.md`
-- `docs/matriz-trazabilidad.md`
-- `docs/validacion-manual-v1.md`
-- `docs/resolucion-conflictos.md`
-- `docs/tablero-actividades.csv`
+## Límites
+- Esta revisión documental no vuelve a ejecutar el código en GitHub.
+- No constituye una auditoría de seguridad integral, rendimiento o accesibilidad.
+- No acredita pruebas manuales visuales que no tengan capturas comprobables.
+- No acredita una aprobación por pares; esta debe registrarla el segundo integrante desde su cuenta en la PR #18.
+- La liberación/tag `v1.0.0` no debe darse por existente hasta comprobarlo.
 
-## Hallazgos estáticos
-
-### Verificado en el código
-
-- `server/app.js` monta Express, JSON parsing con límite de 100 KB, rutas de clientes/servicios/reservas, `/api/health` y contenido estático del frontend.
-- El manejador para JSON malformado devuelve HTTP 400 y un objeto JSON con un mensaje de error.
-- `clientes.js` contiene operaciones de consulta, búsqueda, registro y modificación; incluye comprobaciones de campos obligatorios, validación de correo y tratamiento de documento duplicado.
-- `servicios.js` contiene consulta/búsqueda, registro/modificación y validaciones de precio no negativo y duración positiva.
-- `reservas.js` contiene consulta/filtros, asociación de cliente/servicio y validación de formato de fecha/hora.
-- `package.json` declara `npm test` como `node --test` y `npm start` como `node server/app.js`.
-
-### No verificado por esta revisión
-
-- No se ejecutó el sistema en un navegador desde esta auditoría.
-- No se volvió a ejecutar `npm test` en el entorno del usuario.
-- No se verificó la persistencia real mediante una sesión de usuario.
-- No se hizo una auditoría completa de seguridad, rendimiento, accesibilidad o compatibilidad.
-- No se revisó formalmente como compañero ni se emitió una aprobación de Pull Request.
-- No se verificó una release `v1.0.0`.
-
-## Recomendaciones de prueba
-
-1. Ejecutar `npm ci` y `npm test` en Windows.
-2. Iniciar la aplicación y abrir `http://localhost:3000` y `http://localhost:3000/api/health`.
-3. Probar creación, consulta, modificación y búsquedas de clientes.
-4. Probar creación/consulta/modificación/activación de servicios.
-5. Probar creación, consulta y cancelación de reservas.
-6. Probar fechas inválidas, IDs no válidos y cuerpos JSON malformados.
-7. Conservar las salidas auténticas y registrar cualquier fallo antes de cerrar los issues.
+## Verificaciones requeridas antes de declarar la V1 liberada
+1. Ejecutar `npm ci`, `npm test` y `npm audit` en el entorno local final.
+2. Abrir la aplicación y verificar los flujos de clientes, servicios, reservas y cancelación.
+3. Confirmar que cada requisito de la matriz enlaza una actividad, un responsable real, un desarrollo rastreable, una revisión y la integración.
+4. Conseguir una revisión auténtica del segundo integrante en la PR #18.
+5. Verificar y documentar un conflicto Git reproducible o enlazar evidencia histórica cuyo origen se haya comprobado.
+6. Crear etiqueta/release solo después de pasar las verificaciones anteriores y siempre que la consigna lo solicite.
 
 ## Revisión independiente pendiente
-
-Este documento es un análisis técnico preliminar del repositorio, no una revisión formal de compañero en GitHub. El requisito de revisión por pares debe completarse por un integrante diferente del autor de la PR, con comentarios reales en GitHub.
+El segundo integrante debe revisar los archivos de la PR #18 y registrar su aprobación u observaciones reales en GitHub. No se atribuye una aprobación retrospectiva ni una revisión ficticia.
