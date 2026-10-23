@@ -1,4 +1,4 @@
-﻿## Estado de cierre técnico y pendientes
+## Estado de cierre técnico y pendientes
 
 ### Completado y documentado
 - La PR #15 se integró en `develop` mediante el commit `799c2ea`.
@@ -14,3 +14,10 @@
 - Actualizar el informe final y el PDF con los enlaces y evidencias definitivos.
 
 **Nota:** la integración de la PR #15 acredita el cierre de ese cambio técnico, pero no significa que toda la entrega académica esté finalizada.
+
+### Resultado de pruebas automatizadas
+- Ejecución local compartida: 
+pm test.
+- Resultado reportado: 21 tests en total y 0 fallidos.
+- El total del ejecutor incluye las suites contenedoras; no equivale a 21 subpruebas individuales.
+- Pendiente para el informe: cotejar la captura guardada con la salida real de la ejecución.
