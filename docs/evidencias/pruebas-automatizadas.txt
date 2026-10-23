@@ -1,0 +1,16 @@
+Agenda Clara V1 - Pruebas automatizadas
+Comando: npm test
+Ejecutor: Node.js Test Runner
+
+Resultado:
+Tests totales: 21
+Aprobados: 21
+Fallidos: 0
+Cancelados: 0
+Omitidos: 0
+
+Suites:
+- API y gestion de clientes
+- Servicios y reservas
+
+Estado: APROBADO

@@ -75,7 +75,7 @@ El registro declara que no existen capturas individuales para cada operación.
 | Actividad | Estado conocido | Evidencia o acción pendiente |
 |---|---|---|
 | Integración técnica en `develop` | Completada para la PR #15 | Commit `799c2ea` |
-| Actualización de matriz de trazabilidad | En preparación | Validar esta matriz y preparar una PR documental |
+| Consolidación documental de la matriz | Completada en PR #16 | La documentación se integró; las evidencias externas deben corresponder a actividades reales |
 | Revisión de cambios por otro integrante | Pendiente de confirmar | Verificar revisión y aprobación auténticas en GitHub |
 | Tablero colaborativo | Enlace disponible | Comprobar tareas, responsables y cinco estados requeridos |
 | Conflicto de Git | Documentación en revisión | Verificar el origen de los commits citados en `docs/resolucion-conflictos.md` |
