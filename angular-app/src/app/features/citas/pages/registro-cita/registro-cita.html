@@ -4,7 +4,7 @@
     <header class="encabezado">
       <span class="etiqueta">AGENDA CLARA</span>
       <h1>Registrar una cita</h1>
-      <p>Completa los datos para programar una nueva cita.</p>
+      <p>Completa los datos para programar una nueva cita médica.</p>
     </header>
 
     <form [formGroup]="formularioCita" (ngSubmit)="registrarCita()">
@@ -26,6 +26,28 @@
         @if (formularioCita.get('nombre')?.touched &&
              formularioCita.get('nombre')?.hasError('minlength')) {
           <small>El nombre debe tener al menos 3 caracteres.</small>
+        }
+      </div>
+
+      <div class="campo">
+        <label for="documento">DNI del paciente</label>
+        <input
+          id="documento"
+          type="text"
+          inputmode="numeric"
+          maxlength="8"
+          formControlName="documento"
+          placeholder="Ej. 12345678"
+        />
+
+        @if (formularioCita.get('documento')?.touched &&
+             formularioCita.get('documento')?.hasError('required')) {
+          <small>El DNI es obligatorio.</small>
+        }
+
+        @if (formularioCita.get('documento')?.touched &&
+             formularioCita.get('documento')?.hasError('pattern')) {
+          <small>El DNI debe contener exactamente 8 dígitos.</small>
         }
       </div>
 
@@ -69,28 +91,63 @@
       </div>
 
       <div class="campo">
+        <label for="hora">Hora de atención</label>
+        <input
+          id="hora"
+          type="time"
+          formControlName="hora"
+        />
+
+        @if (formularioCita.get('hora')?.touched &&
+             formularioCita.get('hora')?.hasError('required')) {
+          <small>La hora es obligatoria.</small>
+        }
+      </div>
+
+      <div class="campo">
         <label for="servicio">Servicio médico</label>
+
         <select id="servicio" formControlName="servicio">
           <option value="">Selecciona un servicio</option>
-          <option value="Medicina general">Medicina general</option>
-          <option value="Odontología">Odontología</option>
-          <option value="Pediatría">Pediatría</option>
-          <option value="Psicología">Psicología</option>
+
+          @for (servicio of servicios; track servicio.id) {
+            <option [value]="servicio.id">
+              {{ servicio.nombre }} - S/ {{ servicio.precio }}
+            </option>
+          }
         </select>
 
-        @if (formularioCita.get('servicio')?.touched &&
+        @if (cargandoServicios) {
+          <small>Cargando servicios médicos...</small>
+        }
+
+        @if (errorServicios) {
+          <small>{{ errorServicios }}</small>
+        }
+
+        @if (intentoEnvio &&
              formularioCita.get('servicio')?.hasError('required')) {
           <small>Selecciona un servicio médico.</small>
         }
       </div>
 
-      <button type="submit">Registrar cita</button>
+      <button type="submit" [disabled]="enviando || cargandoServicios">
+        {{ enviando ? 'Registrando cita...' : 'Registrar cita' }}
+      </button>
 
-      @if (enviado) {
-        <p class="mensaje-exito" role="status">
-          ¡Formulario validado correctamente!
+      @if (errorRegistro) {
+        <p class="mensaje-error" role="alert">
+          {{ errorRegistro }}
         </p>
       }
+
+      @if (enviado) {
+        <div class="mensaje-exito" role="status">
+          <strong>¡Cita registrada correctamente!</strong>
+          <p>Código de reserva: {{ codigoReserva }}</p>
+        </div>
+      }
+
     </form>
   </section>
 </main>
