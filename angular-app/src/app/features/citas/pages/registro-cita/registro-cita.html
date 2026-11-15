@@ -1,0 +1,96 @@
+
+<main class="contenedor">
+  <section class="tarjeta">
+    <header class="encabezado">
+      <span class="etiqueta">AGENDA CLARA</span>
+      <h1>Registrar una cita</h1>
+      <p>Completa los datos para programar una nueva cita.</p>
+    </header>
+
+    <form [formGroup]="formularioCita" (ngSubmit)="registrarCita()">
+
+      <div class="campo">
+        <label for="nombre">Nombre del paciente</label>
+        <input
+          id="nombre"
+          type="text"
+          formControlName="nombre"
+          placeholder="Ej. Juan Pérez"
+        />
+
+        @if (formularioCita.get('nombre')?.touched &&
+             formularioCita.get('nombre')?.hasError('required')) {
+          <small>El nombre es obligatorio.</small>
+        }
+
+        @if (formularioCita.get('nombre')?.touched &&
+             formularioCita.get('nombre')?.hasError('minlength')) {
+          <small>El nombre debe tener al menos 3 caracteres.</small>
+        }
+      </div>
+
+      <div class="campo">
+        <label for="correo">Correo electrónico</label>
+        <input
+          id="correo"
+          type="email"
+          formControlName="correo"
+          placeholder="paciente@correo.com"
+        />
+
+        @if (formularioCita.get('correo')?.touched &&
+             formularioCita.get('correo')?.hasError('required')) {
+          <small>El correo es obligatorio.</small>
+        }
+
+        @if (formularioCita.get('correo')?.touched &&
+             formularioCita.get('correo')?.hasError('email')) {
+          <small>Ingresa un correo electrónico válido.</small>
+        }
+      </div>
+
+      <div class="campo">
+        <label for="fecha">Fecha de la cita</label>
+        <input
+          id="fecha"
+          type="date"
+          formControlName="fecha"
+        />
+
+        @if (formularioCita.get('fecha')?.touched &&
+             formularioCita.get('fecha')?.hasError('required')) {
+          <small>La fecha es obligatoria.</small>
+        }
+
+        @if (formularioCita.get('fecha')?.touched &&
+             formularioCita.get('fecha')?.hasError('fechaNoFutura')) {
+          <small>La cita debe programarse para una fecha futura.</small>
+        }
+      </div>
+
+      <div class="campo">
+        <label for="servicio">Servicio médico</label>
+        <select id="servicio" formControlName="servicio">
+          <option value="">Selecciona un servicio</option>
+          <option value="Medicina general">Medicina general</option>
+          <option value="Odontología">Odontología</option>
+          <option value="Pediatría">Pediatría</option>
+          <option value="Psicología">Psicología</option>
+        </select>
+
+        @if (formularioCita.get('servicio')?.touched &&
+             formularioCita.get('servicio')?.hasError('required')) {
+          <small>Selecciona un servicio médico.</small>
+        }
+      </div>
+
+      <button type="submit">Registrar cita</button>
+
+      @if (enviado) {
+        <p class="mensaje-exito" role="status">
+          ¡Formulario validado correctamente!
+        </p>
+      }
+    </form>
+  </section>
+</main>
