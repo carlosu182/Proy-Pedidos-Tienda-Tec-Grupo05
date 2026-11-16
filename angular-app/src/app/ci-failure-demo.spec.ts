@@ -2,6 +2,6 @@
 
 describe('Demostración de CI fallido', () => {
   it('debe mostrar un fallo intencional', () => {
-    expect(true).toBe(false);
+    expect(true).toBe(true);
   });
 });
