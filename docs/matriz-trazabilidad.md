@@ -58,3 +58,24 @@ Integrantes actuales declarados por el equipo:
 - Bruno Santiago Reyes Vicente — U19221035: autor de la [PR #18](https://github.com/carlosu182/Proy-Pedidos-Tienda-Tec-Grupo05/pull/18), sobre el cierre documental de Agenda Clara V1. La PR fue aprobada formalmente por Carlos e integrada en `develop` mediante `083b616`. También figura como autor del commit `3c69a2d`, que implementa operaciones REST para clientes y productos.
 
 Estas entradas acreditan contribuciones puntuales, pero no toda la responsabilidad funcional. Mantener pendiente la atribución individual de RF01–RF10 cuando no exista evidencia específica. La aprobación de la PR #18 está respaldada por su registro formal de revisión; para otras PR, no inferir revisiones ni aprobaciones únicamente a partir de un merge.
+
+## PC3 - Integración y entrega continua
+
+### Estado de los requisitos
+
+| Requisito | Estado |
+|---|---|
+| Formulario Angular | Implementado; pendiente verificación final |
+| Pruebas automatizadas | Implementadas; pendiente ejecución final |
+| Pipeline CI | Implementado; pendiente revisión final |
+| Fallo y corrección de pruebas | Revisar evidencias de Actions |
+| Despliegue CD | Pendiente de integración y verificación |
+| Aplicación en producción | Pendiente de verificación |
+| Sustentación | Pendiente |
+
+### Trabajo realizado por Carlos
+
+- Actualización de la matriz de trazabilidad de PC3.
+- Identificación de evidencias pendientes.
+- Revisión de los requisitos de integración y entrega continua.
+
