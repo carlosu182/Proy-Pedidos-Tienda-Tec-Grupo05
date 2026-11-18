@@ -9,7 +9,8 @@
   "scripts": {
     "test": "node --test",
     "start": "node server/app.js",
-    "dev": "node --watch server/app.js"
+    "dev": "node --watch server/app.js",
+    "prestart": "node server/database/seed.js"
   },
   "repository": {
     "type": "git",
