@@ -51,3 +51,38 @@ jobs:
           path: angular-app/dist/angular-app/browser/
           if-no-files-found: error
           retention-days: 7
+
+
+  deploy:
+    name: Deploy to Cloudflare
+    needs: integration
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Download Angular build
+        uses: actions/download-artifact@v4
+        with:
+          name: agenda-clara-angular-build
+          path: angular-app/dist/angular-app/browser/
+
+      - name: Verify Cloudflare configuration
+        run: test -f wrangler.jsonc
+
+      - name: Deploy application
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy
