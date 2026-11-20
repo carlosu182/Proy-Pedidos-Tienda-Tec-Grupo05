@@ -1,0 +1,97 @@
+﻿name: CI - Agenda Clara
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+    branches:
+      - main
+      - develop
+
+permissions:
+  contents: read
+
+jobs:
+  integration:
+    name: Tests and Production Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install backend dependencies
+        run: npm ci
+
+      - name: Run backend tests
+        run: npm test
+
+      - name: Install Angular dependencies
+        working-directory: angular-app
+        run: npm ci
+
+      - name: Run Angular tests
+        working-directory: angular-app
+        run: npm test -- --watch=false
+
+      - name: Build Angular production
+        working-directory: angular-app
+        run: npm run build
+
+      - name: Upload Angular build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: agenda-clara-angular-build
+          path: angular-app/dist/angular-app/browser/
+          if-no-files-found: error
+          retention-days: 7
+
+
+  deploy:
+    name: Deploy to Cloudflare
+    needs: integration
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Download Angular build
+        uses: actions/download-artifact@v4
+        with:
+          name: agenda-clara-angular-build
+          path: angular-app/dist/angular-app/browser/
+
+      - name: Verify Cloudflare configuration
+        run: test -f wrangler.jsonc
+
+        
+      - name: Apply D1 migrations
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: d1 migrations apply DB --remote
+
+
+      - name: Deploy application
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy

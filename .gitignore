@@ -5,6 +5,11 @@ node_modules/
 .env
 .env.*
 !.env.example
+.dev.vars
+.dev.vars.*
+
+# Cloudflare Wrangler
+.wrangler/
 
 # Base de datos local SQLite
 server/database/data/
@@ -17,13 +22,3 @@ coverage/
 *.log
 .DS_Store
 Thumbs.db
-
-# Dependencias de Node.js
-node_modules/
-
-# Variables de entorno
-.env
-.env.*
-
-# Base de datos local SQLite
-server/database/data/

@@ -1,0 +1,22 @@
+﻿{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "agenda-clara",
+  "main": "cloudflare/worker.js",
+  "compatibility_date": "2026-11-16",
+
+  "assets": {
+    "directory": "./angular-app/dist/angular-app/browser",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  },
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "agenda-clara-db",
+      "database_id": "2bfd045a-426b-4cac-bade-790c1ecc4cbe",
+      "migrations_dir": "cloudflare/migrations"
+    }
+  ]
+}
